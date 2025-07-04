@@ -13,6 +13,7 @@ const featuresList = [
     description: "Understand the \"why\" behind your emotional responses and develop skills for lasting emotional regulation",
   },
 ];
+import TraumaChatDemo from '../TraumaChatDemo.jsx';
 ---
 
 <section class="bg-gradient-to-br from-blue-50 via-white to-blue-100 border-base-200 overflow-hidden">
@@ -31,12 +32,10 @@ const featuresList = [
       <div
         class="flex flex-wrap items-center gap-2 justify-center mx-auto mt-12">
         <a
-          href="#how-it-works"
-          class="flex items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none bg-white ring-1 h-12 px-8 py-3 text-base font-medium rounded-lg" 
-          style="color: var(--color-text-secondary); border-color: var(--color-bg-tertiary)"
-          onmouseover="this.style.color = 'var(--color-primary)'"
-          onmouseout="this.style.color = 'var(--color-text-secondary)'">
-          How It Works
+          href="/waitlist"
+          class="flex items-center justify-center transition bg-primary-light text-white hover:bg-primary h-12 px-8 py-3 text-base font-medium rounded-lg"
+        >
+          Join the Waitlist
         </a>
       </div>
     </div>
@@ -50,11 +49,7 @@ const featuresList = [
       ))}
     </dl>
     <div class="relative w-full mx-auto max-w-7xl items-center py-12 pb-12">
-      <img
-        alt="Process App Dashboard - Complex trauma processing interface"
-        class="relative w-full ring-4 ring-sky-50 border border-sky-200 lg:rounded-2xl object-cover rounded"
-        src="/dashboardLight.svg"
-      />
+      <TraumaChatDemo client:only="react" />
     </div>
   </div>
 </section>
