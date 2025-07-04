@@ -1,21 +1,13 @@
-<svg
-  class="h-4"
-  viewBox="0 0 78 32"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg">
-  <path
-    d="M55.5 0H77.5L58.5 32H36.5L55.5 0Z"
-    class="ccustom"
-    fill="#283CFF">
-  </path>
-  <path
-    d="M35.5 0H51.5L32.5 32H16.5L35.5 0Z"
-    class="ccompli1"
-    fill="#5263FF">
-  </path>
-  <path
-    d="M19.5 0H31.5L12.5 32H0.5L19.5 0Z"
-    class="ccompli2"
-    fill="#808CFF">
+<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Puffier asymmetrical heart shape -->
+  <path d="M60,88 
+           C42,72 18,52 18,35 
+           C18,22 28,12 42,12 
+           C50,12 57,16 60,22
+           C63,17 71,13 80,13
+           C92,13 100,22 100,35
+           C100,54 78,74 60,88 Z" 
+        fill="#7bb6fa" 
+        stroke="none">
   </path>
 </svg>

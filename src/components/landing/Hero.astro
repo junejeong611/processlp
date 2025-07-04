@@ -1,64 +1,58 @@
 ---
 const featuresList = [
   {
-    title: "Astro, Tailwind CSS and Alpine.js",
-    description: "These are the popular technologies behind Syntro.",
+    title: "Process & Release",
+    description: "Work through emotional triggers safely and find relief in real-time", 
   },
   {
-    title: "Includes 6 pages",
-    description:
-      "You will find this landing, FAQ, terms, privacy, sign up, and sign in pages.",
+    title: "Understand Your Patterns",
+    description: "Discover your triggers, core beliefs, and trauma responses through compassionate, guided conversations",
   },
   {
-    title: "Different sections",
-    description:
-      "The starter includes different feature sections, a pricing table, testimonial, CTA, and full forms.",
+    title: "Learn & Heal",
+    description: "Understand the \"why\" behind your emotional responses and develop skills for lasting emotional regulation",
   },
 ];
 ---
 
-<section class="overflow-hidden">
+<section class="bg-gradient-to-br from-blue-50 via-white to-blue-100 border-base-200 overflow-hidden">
   <div class="px-8 pt-32 mx-auto md:px-12 lg:px-24 max-w-7xl relative">
     <div class="max-w-2xl text-center mx-auto lg:text-balance mb-10">
-      <p class="text-sm leading-normal font-bold uppercase text-accent-600">
-        Tagline
+      <p class="text-sm leading-normal font-bold uppercase text-primary">
+        Complex Trauma Support
       </p>
       <h2
-        class="text-xl/snug leading-tight tracking-tight sm:text-2xl/snug md:text-3xl/snug capitalize lg:text-4xl/snug mt-4 font-semibold text-base-900">
-        A astro template built with Astro and Tailwind CSS for your next project
+        class="text-xl leading-tight tracking-tight sm:text-2xl md:text-3xl capitalize lg:text-4xl mt-4 font-semibold text-primary-light">
+        Finally, an app that gets complex trauma
       </h2>
-      <p class="text-base leading-normal mt-4 text-base-500 font-medium">
-        The fastest method for working together on staging and temporary
-        environments.
+      <p class="text-lg leading-relaxed mt-2 font-medium text-primary-light opacity-80">
+        AI support designed specifically for survivors of complex trauma
       </p>
       <div
         class="flex flex-wrap items-center gap-2 justify-center mx-auto mt-12">
         <a
-          href="https://github.com/bekturaslan/syntro-astro"
-          class="flex items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none text-base-500 bg-white hover:text-accent-500 ring-1 ring-base-200 focus:ring-accent-500 h-9 px-4 py-2 text-sm font-medium rounded-md">
-          Get This Template
-        </a>
-        <a
-          href="https://getastrothemes.com/"
-          class="flex items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none text-white bg-accent-600 hover:bg-accent-700 focus:ring-accent-500/50 h-9 px-4 py-2 text-sm font-medium rounded-md">
-          More themes
+          href="#how-it-works"
+          class="flex items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none bg-white ring-1 h-12 px-8 py-3 text-base font-medium rounded-lg" 
+          style="color: var(--color-text-secondary); border-color: var(--color-bg-tertiary)"
+          onmouseover="this.style.color = 'var(--color-primary)'"
+          onmouseout="this.style.color = 'var(--color-text-secondary)'">
+          How It Works
         </a>
       </div>
     </div>
     <dl
-      class="lg:gap-x-8 lg:grid-cols-3 max-w-4xl mt-8 mx-auto sm:gap-x-6 sm:gap-y-12 sm:grid sm:grid-cols-2 sm:space-y-0 space-y-6 text-center text-sm items-start">
-      {
-        featuresList.map(({ title, description }) => (
-          <div class="text-base-500 lg:text-balance">
-            <strong class="text-base-700">{title}</strong> ━ {description}
-          </div>
-        ))
-      }
+      class="lg:gap-x-8 lg:grid-cols-3 max-w-4xl mt-8 mx-auto sm:gap-x-6 sm:gap-y-12 sm:grid sm:grid-cols-3 sm:space-y-0 space-y-6 text-center text-sm items-start">
+      {featuresList.map(({ title, description }) => (
+        <div class="lg:text-balance" style="color: var(--color-text-secondary)">
+          <strong style="color: var(--color-text-primary)">{title} ━</strong><br />
+          <span class="mt-2 block">{description}</span>
+        </div>
+      ))}
     </dl>
     <div class="relative w-full mx-auto max-w-7xl items-center py-12 pb-12">
       <img
-        alt="#_"
-        class="relative w-full ring-4 ring-base-50 border border-base-200 lg:rounded-2xl object-cover rounded"
+        alt="Process App Dashboard - Complex trauma processing interface"
+        class="relative w-full ring-4 ring-sky-50 border border-sky-200 lg:rounded-2xl object-cover rounded"
         src="/dashboardLight.svg"
       />
     </div>

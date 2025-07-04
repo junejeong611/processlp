@@ -1,14 +1,241 @@
----
+--- 
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Faq from "../components/infopages/Faq.astro";
+---    
 
+<BaseLayout>    
+  <!-- FAQ content moved from Faq.astro component -->   
+  <section>     
+    <div class="px-8 py-32 mx-auto md:px-12 lg:px-24 max-w-7xl">       
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-12">         
+        <div class="text-center lg:text-left">           
+          <p class="text-xl leading-tight tracking-tight sm:text-2xl md:text-3xl capitalize lg:text-4xl font-semibold lg:text-balance" style="color: var(--color-text-primary)">
+            Frequently Asked Questions
+          </p>           
+          <p class="text-base leading-normal mt-4 font-medium" style="color: var(--color-text-secondary)">
+            Everything you need to know about Process and trauma-informed AI support
+          </p>         
+        </div>         
+        <div x-data="{ activeAccordion: '', setActiveAccordion(id) { this.activeAccordion = (this.activeAccordion == id) ? '' : id } }" class="relative w-full mx-auto font-normal lg:col-span-2">           
+          
+          <!-- What is Process? -->
+          <div class="w-full mx-auto border-b border-gray-200">
+            <button @click="setActiveAccordion('item-1')" class="flex items-center justify-between w-full px-0 py-6 text-left">
+              <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
+                What is Process and how is it different from other mental health apps?
+              </span>
+              <span x-show="activeAccordion != 'item-1'" class="text-2xl" style="color: var(--color-primary)">+</span>
+              <span x-show="activeAccordion == 'item-1'" class="text-2xl" style="color: var(--color-primary)">−</span>
+            </button>
+            <div x-show="activeAccordion == 'item-1'" x-transition style="color: var(--color-text-secondary)" class="pb-6">
+              <p class="text-base leading-relaxed">
+                Process is specifically designed for complex trauma survivors using AI trained on EMDR, IFS, and somatic therapeutic principles. Unlike generic mental health apps that focus on general anxiety or depression, we understand developmental trauma, emotional dysregulation, and the unique challenges of complex PTSD. Our AI recognizes trauma responses like dissociation and hypervigilance, and responds with trauma-informed care rather than generic "just breathe" advice.
+              </p>
+            </div>
+          </div>
 
----
+          <!-- Is this therapy? -->
+          <div class="w-full mx-auto border-b border-gray-200">
+            <button @click="setActiveAccordion('item-2')" class="flex items-center justify-between w-full px-0 py-6 text-left">
+              <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
+                Is Process a replacement for therapy?
+              </span>
+              <span x-show="activeAccordion != 'item-2'" class="text-2xl" style="color: var(--color-primary)">+</span>
+              <span x-show="activeAccordion == 'item-2'" class="text-2xl" style="color: var(--color-primary)">−</span>
+            </button>
+            <div x-show="activeAccordion == 'item-2'" x-transition style="color: var(--color-text-secondary)" class="pb-6">
+              <p class="text-base leading-relaxed mb-4">
+                No, Process is not a replacement for professional therapy. We're designed as a supportive tool that can:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-base">
+                <li>Provide immediate support when you're overwhelmed between therapy sessions</li>
+                <li>Help you build emotional regulation skills using trauma-informed techniques</li>
+                <li>Support the 70-80% of complex trauma survivors who don't have access to specialized care</li>
+                <li>Bridge you to trauma-informed therapists when you're ready for professional support</li>
+              </ul>
+              <p class="text-base leading-relaxed mt-4">
+                Think of us as a supportive friend who understands complex trauma and can help you process emotions safely while you work toward or alongside professional care.
+              </p>
+            </div>
+          </div>
 
+          <!-- Safety and Crisis -->
+          <div class="w-full mx-auto border-b border-gray-200">
+            <button @click="setActiveAccordion('item-3')" class="flex items-center justify-between w-full px-0 py-6 text-left">
+              <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
+                What if I'm in crisis or having thoughts of self-harm?
+              </span>
+              <span x-show="activeAccordion != 'item-3'" class="text-2xl" style="color: var(--color-primary)">+</span>
+              <span x-show="activeAccordion == 'item-3'" class="text-2xl" style="color: var(--color-primary)">−</span>
+            </button>
+            <div x-show="activeAccordion == 'item-3'" x-transition style="color: var(--color-text-secondary)" class="pb-6">
+              <p class="text-base leading-relaxed mb-4">
+                Process is not equipped for crisis intervention. If you're experiencing thoughts of self-harm or suicide, please reach out for immediate help:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-base mb-4">
+                <li><strong>988 Suicide & Crisis Lifeline:</strong> Call or text 988</li>
+                <li><strong>Emergency Services:</strong> Call 911</li>
+                <li><strong>Crisis Text Line:</strong> Text HOME to 741741</li>
+                <li><strong>Your local emergency room</strong></li>
+              </ul>
+              <p class="text-base leading-relaxed">
+                Our AI can recognize crisis language and will provide these resources, but we cannot replace emergency mental health services. Your safety is the top priority.
+              </p>
+            </div>
+          </div>
 
+          <!-- Privacy and Security -->
+          <div class="w-full mx-auto border-b border-gray-200">
+            <button @click="setActiveAccordion('item-4')" class="flex items-center justify-between w-full px-0 py-6 text-left">
+              <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
+                How do you protect my privacy and conversations?
+              </span>
+              <span x-show="activeAccordion != 'item-4'" class="text-2xl" style="color: var(--color-primary)">+</span>
+              <span x-show="activeAccordion == 'item-4'" class="text-2xl" style="color: var(--color-primary)">−</span>
+            </button>
+            <div x-show="activeAccordion == 'item-4'" x-transition style="color: var(--color-text-secondary)" class="pb-6">
+              <p class="text-base leading-relaxed mb-4">
+                Your privacy is sacred to us. We understand trauma survivors need absolute safety:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-base mb-4">
+                <li><strong>End-to-end encryption:</strong> Your conversations are encrypted and secure</li>
+                <li><strong>No selling data:</strong> We never sell your personal information to anyone</li>
+                <li><strong>Private training:</strong> Your conversations are never used to train our AI</li>
+                <li><strong>You control your data:</strong> Delete conversations or your entire account anytime</li>
+                <li><strong>Minimal sharing:</strong> We only share data with essential service providers under strict privacy agreements</li>
+              </ul>
+              <p class="text-base leading-relaxed">
+                See our detailed Privacy Policy for complete information about how we protect your sensitive information.
+              </p>
+            </div>
+          </div>
 
-<BaseLayout>
+          <!-- How AI Works -->
+          <div class="w-full mx-auto border-b border-gray-200">
+            <button @click="setActiveAccordion('item-5')" class="flex items-center justify-between w-full px-0 py-6 text-left">
+              <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
+                How does your AI understand complex trauma?
+              </span>
+              <span x-show="activeAccordion != 'item-5'" class="text-2xl" style="color: var(--color-primary)">+</span>
+              <span x-show="activeAccordion == 'item-5'" class="text-2xl" style="color: var(--color-primary)">−</span>
+            </button>
+            <div x-show="activeAccordion == 'item-5'" x-transition style="color: var(--color-text-secondary)" class="pb-6">
+              <p class="text-base leading-relaxed mb-4">
+                Our AI is specifically configured for complex trauma support through:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-base mb-4">
+                <li><strong>Trauma-informed frameworks:</strong> Trained on EMDR, IFS (Internal Family Systems), and somatic experiencing principles</li>
+                <li><strong>Complex trauma recognition:</strong> Understands dissociation, emotional dysregulation, hypervigilance, and trauma responses</li>
+                <li><strong>Parts work awareness:</strong> Recognizes internal conflicts and different "parts" of your experience</li>
+                <li><strong>Body-based understanding:</strong> Incorporates somatic approaches to trauma stored in the body</li>
+                <li><strong>Safety-first responses:</strong> Prioritizes emotional regulation and safety before processing</li>
+              </ul>
+              <p class="text-base leading-relaxed">
+                This isn't generic AI giving mindfulness advice - it's specifically designed to understand and respond to complex developmental trauma.
+              </p>
+            </div>
+          </div>
 
-  <Faq />
+          <!-- Pattern Recognition -->
+          <div class="w-full mx-auto border-b border-gray-200">
+            <button @click="setActiveAccordion('item-6')" class="flex items-center justify-between w-full px-0 py-6 text-left">
+              <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
+                How does Process help me understand my patterns and triggers?
+              </span>
+              <span x-show="activeAccordion != 'item-6'" class="text-2xl" style="color: var(--color-primary)">+</span>
+              <span x-show="activeAccordion == 'item-6'" class="text-2xl" style="color: var(--color-primary)">−</span>
+            </button>
+            <div x-show="activeAccordion == 'item-6'" x-transition style="color: var(--color-text-secondary)" class="pb-6">
+              <p class="text-base leading-relaxed mb-4">
+                Through your conversations with our AI, Process identifies patterns and offers insights about:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-base mb-4">
+                <li><strong>Emotional triggers:</strong> Situations, words, or experiences that activate trauma responses</li>
+                <li><strong>Core beliefs:</strong> Deep-seated beliefs about yourself, others, and the world formed through trauma</li>
+                <li><strong>Coping patterns:</strong> How you typically respond to stress and overwhelming emotions</li>
+                <li><strong>Body sensations:</strong> Physical responses that signal emotional activation</li>
+                <li><strong>Relationship dynamics:</strong> How trauma shows up in your connections with others</li>
+              </ul>
+              <p class="text-base leading-relaxed">
+                These insights help you develop self-awareness and make conscious choices about your responses rather than reacting automatically from trauma patterns.
+              </p>
+            </div>
+          </div>
 
+          <!-- Pricing -->
+          <div class="w-full mx-auto border-b border-gray-200">
+            <button @click="setActiveAccordion('item-7')" class="flex items-center justify-between w-full px-0 py-6 text-left">
+              <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
+                How much does Process cost?
+              </span>
+              <span x-show="activeAccordion != 'item-7'" class="text-2xl" style="color: var(--color-primary)">+</span>
+              <span x-show="activeAccordion == 'item-7'" class="text-2xl" style="color: var(--color-primary)">−</span>
+            </button>
+            <div x-show="activeAccordion == 'item-7'" x-transition style="color: var(--color-text-secondary)" class="pb-6">
+              <p class="text-base leading-relaxed mb-4">
+                We believe trauma support should be accessible, so we offer:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-base mb-4">
+                <li><strong>Free tier:</strong> Basic emotional processing and limited insights</li>
+                <li><strong>Premium subscription:</strong> Unlimited conversations, full pattern recognition, voice features, and priority access to trauma specialists</li>
+              </ul>
+              <p class="text-base leading-relaxed">
+                We're committed to ensuring cost is never a barrier to accessing trauma-informed support. Our free tier provides meaningful help, and premium features enhance your healing journey.
+              </p>
+            </div>
+          </div>
+
+          <!-- Who built this -->
+          <div class="w-full mx-auto border-b border-gray-200">
+            <button @click="setActiveAccordion('item-8')" class="flex items-center justify-between w-full px-0 py-6 text-left">
+              <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
+                Who built Process and why should I trust it?
+              </span>
+              <span x-show="activeAccordion != 'item-8'" class="text-2xl" style="color: var(--color-primary)">+</span>
+              <span x-show="activeAccordion == 'item-8'" class="text-2xl" style="color: var(--color-primary)">−</span>
+            </button>
+            <div x-show="activeAccordion == 'item-8'" x-transition style="color: var(--color-text-secondary)" class="pb-6">
+              <p class="text-base leading-relaxed mb-4">
+                Process is built by trauma survivors for trauma survivors. Our team includes:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-base mb-4">
+                <li>Trauma survivors with lived experience of complex PTSD</li>
+                <li>Mental health professionals specializing in trauma-informed care</li>
+                <li>Technology experts committed to ethical AI development</li>
+                <li>Advisors from the trauma therapy and research community</li>
+              </ul>
+              <p class="text-base leading-relaxed">
+                We understand the unique challenges of complex trauma because we've lived them. Every feature is designed with deep empathy and understanding of what trauma survivors actually need, not what generic mental health apps think we need.
+              </p>
+            </div>
+          </div>
+
+          <!-- Getting Started -->
+          <div class="w-full mx-auto">
+            <button @click="setActiveAccordion('item-9')" class="flex items-center justify-between w-full px-0 py-6 text-left">
+              <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
+                How do I get started with Process?
+              </span>
+              <span x-show="activeAccordion != 'item-9'" class="text-2xl" style="color: var(--color-primary)">+</span>
+              <span x-show="activeAccordion == 'item-9'" class="text-2xl" style="color: var(--color-primary)">−</span>
+            </button>
+            <div x-show="activeAccordion == 'item-9'" x-transition style="color: var(--color-text-secondary)" class="pb-6">
+              <p class="text-base leading-relaxed mb-4">
+                Getting started is simple and safe:
+              </p>
+              <ol class="list-decimal pl-6 space-y-2 text-base mb-4">
+                <li><strong>Create your account:</strong> Just an email and password - no personal details required</li>
+                <li><strong>Start a conversation:</strong> Share what's on your mind - there's no wrong way to begin</li>
+                <li><strong>Explore at your pace:</strong> Use voice or text, process emotions, or learn about trauma</li>
+                <li><strong>Build insights:</strong> Over time, experience healing, discover patterns and develop self-regulation skills</li>
+              </ol>
+              <p class="text-base leading-relaxed">
+                Remember: you're in complete control. Go as fast or slow as feels safe, and you can delete anything or stop anytime.
+              </p>
+            </div>
+          </div>
+
+        </div>       
+      </div>       
+    </div>   
+  </section>  
 </BaseLayout>

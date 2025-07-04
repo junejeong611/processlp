@@ -1,73 +1,38 @@
 ---
-const sections = [
-  {
-    title: "All pages",
-    links: [
-      { name: "Home", href: "/" },
-      { name: "About", href: "/about" },
-      { name: "Features", href: "/features" },
-      { name: "Pricing", href: "/pricing" },
-      { name: "FAQ", href: "/faq" },
-      { name: "Contact", href: "/contact" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { name: "Careers", href: "/careers" },
-      { name: "Press", href: "/press" },
-      { name: "Blog", href: "/blog" },
-      { name: "Partners", href: "/partners" },
-      { name: "Terms", href: "/terms" },
-      { name: "Privacy", href: "/privacy" },
-    ],
-  },
-  {
-    title: "Developers",
-    links: [
-      { name: "Documentation", href: "/docs" },
-      { name: "API Reference", href: "/api" },
-      { name: "Status", href: "/status" },
-      { name: "Github", href: "https://github.com/bekturaslan/syntro-astro" },
-      { name: "Changelog", href: "/changelog" },
-    ],
-  },
-  {
-    title: "Support",
-    links: [
-      { name: "Help Center", href: "/help" },
-      { name: "Community", href: "/community" },
-      { name: "Contact Support", href: "/support" },
-      { name: "Live Chat", href: "/chat" },
-    ],
-  },
+const policyLinks = [
+  { name: "Terms of Use", href: "/terms" },
+  { name: "Privacy Policy", href: "/privacy" },
+  { name: "AI Policy", href: "/ai-policy" },
 ];
 ---
 
-<footer
-  class="bg-gradient-to-br from-blue-50 via-white to-blue-100 border-base-200">
-  <div class="px-6 md:px-12 lg:px-24 py-20 max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-      <div class="md:col-span-1">
+<footer class="bg-gradient-to-br from-blue-50 via-white to-blue-100 border-base-200">
+  <div class="px-6 md:px-12 lg:px-24 py-12 max-w-7xl mx-auto">
+    
+    <!-- Main Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+      
+      <!-- Brand Section -->
+      <div>
         <a href="/" class="inline-flex items-center gap-3">
-          <img width="40" src="/logo.svg" alt="logo" />
-          <span class="text-lg font-semibold text-black">Syntro</span>
+          <img width="40" src="/logo.svg" alt="Process logo" />
+          <span class="text-lg font-semibold text-black">Process</span>
         </a>
-        <p class="mt-4 text-sm text-gray-500">
-          Open-source SaaS starter built with Astro & Tailwind CSS. Customize
-          freely and deploy with ease.
+        <p class="mt-4 text-sm text-text-muted">
+          Real-time emotional support for complex trauma survivors. 
+          Process emotions safely with AI-powered guidance.
         </p>
       </div>
 
-      <div class="md:col-span-2">
+      <!-- Newsletter Section -->
+      <div>
         <h3 class="text-lg font-semibold text-black mb-2">
-          Subscribe to our newsletter
+          Stay Updated
         </h3>
-        <p class="text-sm text-gray-500 mb-4">
-          Join 1,000+ developers and get product updates, tips, and insights in
-          your inbox.
+        <p class="text-sm text-text-muted mb-4">
+          Get updates on new features and trauma-informed resources.
         </p>
-        <form class="flex flex-col sm:flex-row items-center gap-3 w-full">
+        <form class="flex flex-col sm:flex-row items-center gap-3">
           <input
             type="email"
             placeholder="Your email address"
@@ -75,46 +40,34 @@ const sections = [
           />
           <button
             type="submit"
-            class="px-6 py-2 w-full md:w-auto rounded-md bg-blue-600 text-white hover:bg-blue-700 transition">
+            class="px-6 py-2 w-full sm:w-auto rounded-md bg-primary-light text-white hover:bg-primary transition">
             Subscribe
           </button>
         </form>
       </div>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm text-gray-600">
-      {
-        sections.map(({ title, links }) => (
-          <div>
-            <h4 class="text-base font-semibold text-black mb-5">{title}</h4>
-            <ul>
-              {links.map(({ name, href }) => (
-                <li class="first:prose-a:pt-0 last:prose-a:pb-0">
-                  <a
-                    href={href}
-                    class="hover:text-blue-600 py-2 inline-block transition">
-                    {name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))
-      }
+    <!-- Policy Links -->
+    <div class="py-6 border-t border-base-200">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+        
+        <!-- Copyright -->
+        <p class="text-xs text-text-muted">
+          &copy; {new Date().getFullYear()} Process. Supporting trauma survivors with compassionate technology.
+        </p>
+        
+        <!-- Policy Links -->
+        <div class="flex gap-6 text-xs">
+          {policyLinks.map(({ name, href }) => (
+            <a
+              href={href}
+              class="text-text-muted hover:text-primary transition">
+              {name}
+            </a>
+          ))}
+        </div>
+      </div>
     </div>
 
-    <div
-      class="pt-12 mt-12 border-t border-base-200 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
-      <p>
-        &copy; {new Date().getFullYear()} Syntro. Originally by Michael Andreuzza.
-      </p>
-      <p>
-        Additionally Development by <a
-          href="https://getastrothemes.com/?ref=free-themes"
-          class="underline text-blue-600 hover:text-blue-800">
-          Getastrothemes
-        </a>
-      </p>
-    </div>
   </div>
 </footer>

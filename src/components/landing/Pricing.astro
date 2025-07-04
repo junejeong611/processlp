@@ -2,273 +2,71 @@
   <div
     class="mx-auto w-full lg:px-24 max-w-7xl md:px-12 items-center px-8 py-24">
     <div class="max-w-xl text-center mx-auto">
-      <p class="text-sm leading-normal font-bold uppercase text-accent-600">
-        Tagline
+      <p class="text-sm leading-normal font-bold uppercase" style="color: var(--color-primary)">
+        Accessible Support
       </p>
       <h2
-        class="text-xl leading-tight tracking-tight sm:text-2xl md:text-3xl capitalize lg:text-4xl mt-4 font-semibold text-base-900 lg:text-balance">
-        Equip your business
+        class="text-xl leading-tight tracking-tight sm:text-2xl md:text-3xl capitalize lg:text-4xl mt-4 font-semibold lg:text-balance" style="color: var(--color-text-primary)">
+        Start Healing Today
       </h2>
       <p
-        class="text-base leading-normal mt-4 text-base-500 font-medium lg:text-balance">
-        Choose a plan that works the best for you and your team.
+        class="text-base leading-normal mt-4 font-medium lg:text-balance" style="color: var(--color-text-secondary)">
+        Choose the level of support that works for your healing journey.
       </p>
-      <div
-        aria-labelledby="pricing-toggle"
-        class="w-full relative mt-8 ring-1 ring-base-200 ring-offset-2 bg-white overflow-hidden justify-center gap-4 mx-auto lg:mx-0 inline-flex p-1 rounded-md max-w-52 shadow z-0">
-        <!-- Monthly Pricing Button: Sets 'duration' to 'monthly' when clicked -->
-        <!-- Sliding background -->
-        <div
-          class="absolute inset-0 bg-base-50 rounded-md transition-transform duration-200 ease-in-out"
-          :class="duration === 'monthly' ? 'w-1/2 translate-x-0' : 'w-1/2 translate-x-full'">
-        </div>
-        <!-- Monthly Pricing Button -->
-        <button
-          id="monthly-pricing-button"
-          class="relative flex items-center justify-center w-full px-2 h-6 text-xs font-medium focus:outline-none transition-colors duration-300 z-10"
-          :class="duration === 'monthly' ? 'text-accent-600' : 'text-base-500 hover:text-accent-500'"
-          @click="duration = 'monthly'"
-          type="button"
-          :aria-pressed="duration === 'monthly'">
-          Monthly
-        </button>
-        <!-- Annual Pricing Button -->
-        <button
-          id="annual-pricing-button"
-          class="relative flex items-center justify-center w-full px-2 h-6 text-xs font-medium focus:outline-none transition-colors duration-300 z-10"
-          :class="duration === 'annual' ? 'text-accent-600' : 'text-base-500 hover:text-accent-500'"
-          @click="duration = 'annual'"
-          type="button"
-          :aria-pressed="duration === 'annual'">
-          Annual
-        </button>
-      </div>
     </div>
+    
     <div
-      class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 mt-12 mx-auto">
-      <!-- Tier one -->
+      class="grid grid-cols-1 gap-8 lg:grid-cols-2 mt-12 mx-auto max-w-4xl">
+      
+      <!-- Free Tier -->
       <div
-        class="flex flex-col h-full p-1 lg:py-1 rounded-3xl bg-base-50 ring-4 ring-base-50 border border-base-200">
+        class="flex flex-col h-full p-1 lg:py-1 rounded-3xl ring-4 border" style="background-color: var(--color-bg-secondary); border-color: var(--color-bg-tertiary); ring-color: var(--color-bg-tertiary)">
         <div>
           <div class="flex flex-col gap-4 p-8 bg-white rounded-[1.3rem] h-full">
             <div class="flex items-start justify-between w-full">
               <div>
                 <h3
-                  class="text-lg leading-normal sm:text-xl md:text-2xl font-medium text-base-900">
-                  Core
+                  class="text-lg leading-normal sm:text-xl md:text-2xl font-medium" style="color: var(--color-text-primary)">
+                  Free Support
                 </h3>
-                <p class="text-base leading-normal font-medium text-base-500">
-                  For individuals
-                </p>
-              </div>
-            </div>
-            <p class="text-base leading-normal font-medium text-base-500">
-              This subscription tier caters to individuals and hobbyists seeking
-              features.
-            </p>
-          </div>
-        </div>
-        <div class="p-8">
-          <p
-            class="font-semibold flex lg:text-3xl items-baseline text-2xl tracking-tighter text-base-900">
-            <span
-              data-monthly="$29.00"
-              data-annual="$19.00"
-              x-text="$el.dataset[duration]">
-            </span>
-            <span
-              class="text-sm font-normal font-sans tracking-normal text-base-500">
-              <span x-show="duration === 'monthly'">/month</span>
-              <span x-show="duration === 'annual'" style="display: none">
-                /annually
-              </span>
-            </span>
-          </p>
-          <div class="w-full mt-4">
-            <a
-              href="https://github.com/bekturaslan/syntro-astro"
-              class="flex items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none text-base-500 bg-white hover:text-accent-500 ring-1 ring-base-200 focus:ring-accent-500 h-9 px-4 py-2 text-sm font-medium rounded-md w-full">
-              Get Started
-            </a>
-          </div>
-          <div class="mt-8">
-            <p
-              class="text-sm leading-normal font-medium uppercase text-base-500">
-              Core plan includes:
-            </p>
-            <ul class="flex flex-col mt-4 gap-y-3 text-base-500" role="list">
-              <li class="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M5 12l5 5l10 -10"></path>
-                </svg>
-                <span class="text-base leading-normal">Unlimited members</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M5 12l5 5l10 -10"></path>
-                </svg>
-                <span class="text-base leading-normal">1 Team</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M5 12l5 5l10 -10"></path>
-                </svg>
-                <span class="text-base leading-normal">50 issues</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M5 12l5 5l10 -10"></path>
-                </svg>
-                <span class="text-base leading-normal">
-                  Slack, GitHub, and API access
-                </span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M5 12l5 5l10 -10"></path>
-                </svg>
-                <span class="text-base leading-normal">
-                  Basic reporting tools
-                </span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M5 12l5 5l10 -10"></path>
-                </svg>
-                <span class="text-base leading-normal">Community support</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M5 12l5 5l10 -10"></path>
-                </svg>
-                <span class="text-base leading-normal">
-                  Basic customization options
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Tier two -->
-      <div
-        class="flex flex-col h-full p-1 lg:py-1 rounded-3xl bg-base-950 ring-4 ring-base-50 border border-base-200">
-        <div>
-          <div
-            class="flex flex-col gap-4 p-8 bg-white/10 rounded-[1.3rem] h-full">
-            <div class="flex items-start justify-between w-full">
-              <div>
-                <h3
-                  class="text-lg leading-normal sm:text-xl md:text-2xl font-medium text-white">
-                  Momentum
-                </h3>
-                <p class="text-base leading-normal font-medium text-base-200">
-                  For startups
+                <p class="text-base leading-normal font-medium" style="color: var(--color-text-secondary)">
+                  Essential trauma support
                 </p>
               </div>
               <span
-                class="inline-flex items-center font-medium relative text-base-700 bg-base-50 px-2.5 py-1 text-xs rounded-md">
-                Popular
+                class="inline-flex items-center font-medium relative text-white px-2.5 py-1 text-xs rounded-md" style="background-color: var(--color-accent)">
+                Always Free
               </span>
             </div>
-            <p class="text-base leading-normal font-medium text-base-200">
-              Tailored for expanding businesses, this tier offers advanced tools
-              and analytics.
+            <p class="text-base leading-normal font-medium" style="color: var(--color-text-secondary)">
+              Get immediate access to trauma-informed AI support. No credit card required, no barriers to healing.
             </p>
           </div>
         </div>
         <div class="p-8">
           <p
-            class="font-semibold flex lg:text-3xl items-baseline text-2xl tracking-tighter text-white">
+            class="font-semibold flex lg:text-3xl items-baseline text-2xl tracking-tighter" style="color: var(--color-text-primary)">
+            <span>$0</span>
             <span
-              data-monthly="$49.00"
-              data-annual="$39.00"
-              x-text="$el.dataset[duration]">
-            </span>
-            <span
-              class="text-sm font-normal font-sans tracking-normal text-white/50">
-              <span x-show="duration === 'monthly'">/month</span>
-              <span x-show="duration === 'annual'" style="display: none">
-                /annually
-              </span>
+              class="text-sm font-normal font-sans tracking-normal" style="color: var(--color-text-secondary)">
+              /forever
             </span>
           </p>
           <div class="w-full mt-4">
             <a
-              href="https://github.com/bekturaslan/syntro-astro"
-              class="flex items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none text-base-500 bg-white hover:text-accent-500 ring-1 ring-base-200 focus:ring-accent-500 h-9 px-4 py-2 text-sm font-medium rounded-md w-full">
-              Get Started
+              href="https://your-aws-app-url.com"
+              class="flex items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none text-white h-10 px-6 py-3 text-base font-medium rounded-lg w-full bg-primary-light hover:bg-primary"
+            >
+              Start Free Support
             </a>
           </div>
           <div class="mt-8">
             <p
-              class="text-sm leading-normal font-medium uppercase text-base-200">
-              Momentum plan includes:
+              class="text-sm leading-normal font-medium uppercase" style="color: var(--color-text-secondary)">
+              Free tier includes:
             </p>
-            <ul class="flex flex-col mt-4 gap-y-3 text-base-200" role="list">
-              <li class="flex items-center gap-2">
+            <ul class="flex flex-col mt-4 gap-y-3" style="color: var(--color-text-secondary)" role="list">
+              <li class="flex items-center gap-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -277,30 +75,15 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4">
+                  class="size-5 flex-shrink-0" style="color: var(--color-accent)">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
-                <span class="text-base leading-normal">Unlimited teams</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M5 12l5 5l10 -10"></path>
-                </svg>
-                <span class="text-base leading-normal">
-                  Private teams and guests
+                <span class="text-base leading-relaxed">
+                  <strong>Unlimited text-based emotional processing</strong> with trauma-informed AI
                 </span>
               </li>
-              <li class="flex items-center gap-2">
+              <li class="flex items-center gap-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -309,30 +92,15 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4">
+                  class="size-5 flex-shrink-0" style="color: var(--color-accent)">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
-                <span class="text-base leading-normal">Insights</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M5 12l5 5l10 -10"></path>
-                </svg>
-                <span class="text-base leading-normal">
-                  Custom branding options
+                <span class="text-base leading-relaxed">
+                  <strong>Crisis resources and safety planning</strong> when you need immediate help
                 </span>
               </li>
-              <li class="flex items-center gap-2">
+              <li class="flex items-center gap-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -341,15 +109,15 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4">
+                  class="size-5 flex-shrink-0" style="color: var(--color-accent)">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
-                <span class="text-base leading-normal">
-                  Collaboration tools
+                <span class="text-base leading-relaxed">
+                  <strong>Simple mood tracking</strong> to notice emotional patterns over time
                 </span>
               </li>
-              <li class="flex items-center gap-2">
+              <li class="flex items-center gap-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -358,69 +126,85 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4">
+                  class="size-5 flex-shrink-0" style="color: var(--color-accent)">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
-                <span class="text-base leading-normal">Mobile app access</span>
+                <span class="text-base leading-relaxed">
+                  <strong>Complete privacy and security</strong> for all your conversations
+                </span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="size-5 flex-shrink-0" style="color: var(--color-accent)">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M5 12l5 5l10 -10"></path>
+                </svg>
+                <span class="text-base leading-relaxed">
+                  <strong>24/7 availability</strong> for support whenever you need it
+                </span>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <!-- Tier three -->
+      
+      <!-- Premium Tier -->
       <div
-        class="flex flex-col h-full p-1 lg:py-1 rounded-3xl bg-accent-700 ring-4 ring-base-50 border border-base-200">
+        class="flex flex-col h-full p-1 lg:py-1 rounded-3xl ring-4 border relative" style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); border-color: var(--color-primary); ring-color: var(--color-primary-light)">
         <div>
           <div
-            class="flex flex-col gap-4 p-8 bg-white/10 rounded-[1.3rem] h-full">
+            class="flex flex-col gap-4 p-8 bg-white/10 backdrop-blur-sm rounded-[1.3rem] h-full">
             <div class="flex items-start justify-between w-full">
               <div>
                 <h3
                   class="text-lg leading-normal sm:text-xl md:text-2xl font-medium text-white">
-                  Growth
+                  Premium Support
                 </h3>
-                <p class="text-base leading-normal font-medium text-base-200">
-                  For corporates
+                <p class="text-base leading-normal font-medium text-white/80">
+                  Enhanced healing tools
                 </p>
               </div>
+              <span
+                class="inline-flex items-center font-medium relative px-2.5 py-1 text-xs rounded-md text-white" style="background-color: var(--color-accent)">
+                Most Popular
+              </span>
             </div>
-            <p class="text-base leading-normal font-medium text-base-200">
-              Designed for established businesses, providing comprehensive
-              tools.
+            <p class="text-base leading-normal font-medium text-white/90">
+              Unlock deeper insights and advanced features for accelerated healing and pattern recognition.
             </p>
           </div>
         </div>
         <div class="p-8">
           <p
             class="font-semibold flex lg:text-3xl items-baseline text-2xl tracking-tighter text-white">
+            <span>$9.99</span>
             <span
-              data-monthly="$99.00"
-              data-annual="$79.00"
-              x-text="$el.dataset[duration]">
-            </span>
-            <span
-              class="text-sm font-normal font-sans tracking-normal text-accent-100">
-              <span x-show="duration === 'monthly'">/month</span>
-              <span x-show="duration === 'annual'" style="display: none">
-                /annually
-              </span>
+              class="text-sm font-normal font-sans tracking-normal text-white/70">
+              /month
             </span>
           </p>
           <div class="w-full mt-4">
             <a
-              href="https://github.com/bekturaslan/syntro-astro"
-              class="flex items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none text-base-500 bg-white hover:text-accent-500 ring-1 ring-base-200 focus:ring-accent-500 h-9 px-4 py-2 text-sm font-medium rounded-md w-full">
-              Get Started
+              href="https://your-aws-app-url.com"
+              class="flex items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none bg-white text-black hover:bg-gray-100 h-10 px-6 py-3 text-base font-medium rounded-lg w-full">
+              Start Premium Trial
             </a>
           </div>
           <div class="mt-8">
             <p
-              class="text-sm leading-normal font-medium uppercase text-base-200">
-              Growth plan includes:
+              class="text-sm leading-normal font-medium uppercase text-white/70">
+              Everything in Free, plus:
             </p>
-            <ul class="flex flex-col mt-4 gap-y-3 text-base-200" role="list">
-              <li class="flex items-center gap-2">
+            <ul class="flex flex-col mt-4 gap-y-3 text-white/90" role="list">
+              <li class="flex items-center gap-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -429,60 +213,15 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4">
+                  class="size-5 flex-shrink-0" style="color: var(--color-accent)">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
-                <span class="text-base leading-normal">Unlimited members</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M5 12l5 5l10 -10"></path>
-                </svg>
-                <span class="text-base leading-normal">Advanced analytics</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M5 12l5 5l10 -10"></path>
-                </svg>
-                <span class="text-base leading-normal">Priority support</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M5 12l5 5l10 -10"></path>
-                </svg>
-                <span class="text-base leading-normal">
-                  Custom API integration
+                <span class="text-base leading-relaxed">
+                  <strong>Voice-based emotional processing</strong> for hands-free support when you need it
                 </span>
               </li>
-              <li class="flex items-center gap-2">
+              <li class="flex items-center gap-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -491,13 +230,15 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4">
+                  class="size-5 flex-shrink-0" style="color: var(--color-accent)">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
-                <span class="text-base leading-normal">Unlimited storage</span>
+                <span class="text-base leading-relaxed">
+                  <strong>Advanced insights dashboard</strong> revealing your triggers, patterns, and core beliefs
+                </span>
               </li>
-              <li class="flex items-center gap-2">
+              <li class="flex items-center gap-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -506,16 +247,71 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4">
+                  class="size-5 flex-shrink-0" style="color: var(--color-accent)">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
-                <span class="text-base leading-normal">Enhanced security</span>
+                <span class="text-base leading-relaxed">
+                  <strong>Extended conversation history</strong> to track your healing journey over time
+                </span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="size-5 flex-shrink-0" style="color: var(--color-accent)">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M5 12l5 5l10 -10"></path>
+                </svg>
+                <span class="text-base leading-relaxed">
+                  <strong>Priority access to new features</strong> and trauma-informed tools as we develop them
+                </span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="size-5 flex-shrink-0" style="color: var(--color-accent)">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M5 12l5 5l10 -10"></path>
+                </svg>
+                <span class="text-base leading-relaxed">
+                  <strong>Priority support</strong> for technical issues and feedback
+                </span>
               </li>
             </ul>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Accessibility Message -->
+    <div class="mt-16 text-center">
+      <div class="max-w-2xl mx-auto p-6 rounded-lg" style="background-color: var(--color-bg-secondary)">
+        <h4 class="text-lg font-semibold mb-2" style="color: var(--color-text-primary)">
+          Healing Should Never Be Limited by Cost
+        </h4>
+        <p class="text-base leading-relaxed" style="color: var(--color-text-secondary)">
+          Our free tier provides real, meaningful support because we believe every trauma survivor deserves access to healing tools. Premium features enhance your journey, but you'll never lose access to essential support.
+        </p>
+      </div>
+    </div>
+
+    <!-- Money-back guarantee -->
+    <div class="mt-8 text-center">
+      <p class="text-sm" style="color: var(--color-text-muted)">
+        30-day money-back guarantee • Cancel anytime • No long-term commitments
+      </p>
     </div>
   </div>
 </section>
