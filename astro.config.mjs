@@ -3,7 +3,8 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 export default defineConfig({
-vite: {
+  output: 'server',
+  vite: {
     plugins: [tailwindcss()],
   },
     // add yur domain name here
