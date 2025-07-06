@@ -154,7 +154,8 @@ const TraumaChatDemo = () => {
     <div
       style={{ 
         fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-        height: '650px',
+        minHeight: '400px',
+        height: '100%',
         display: 'flex',
         flexDirection: 'row',
         background: 'linear-gradient(135deg, #f7fafc 0%, #e8f2ff 50%, #ffffff 100%)',
@@ -166,11 +167,11 @@ const TraumaChatDemo = () => {
       <button
         onClick={() => setShowMobileNav(!showMobileNav)}
         style={{
-          display: 'none',
+          display: 'none', // default hidden, shown in media query
           position: 'fixed',
           top: '1rem',
           left: '1rem',
-          zIndex: 1000,
+          zIndex: 2001,
           background: 'rgba(255, 255, 255, 0.9)',
           border: 'none',
           borderRadius: '12px',
@@ -179,6 +180,8 @@ const TraumaChatDemo = () => {
           boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
         }}
         className="mobile-menu-btn"
+        aria-label="Open sidebar"
+        aria-expanded={showMobileNav}
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M4 6h16M4 12h16M4 18h16" strokeLinecap="round"/>
@@ -195,7 +198,7 @@ const TraumaChatDemo = () => {
             right: 0,
             bottom: 0,
             background: 'rgba(0, 0, 0, 0.5)',
-            zIndex: 99
+            zIndex: 2000
           }}
           className="mobile-overlay"
           onClick={() => setShowMobileNav(false)}
@@ -220,10 +223,9 @@ const TraumaChatDemo = () => {
           boxShadow: '0 0 32px rgba(60, 90, 130, 0.04)',
           zIndex: 100,
           transition: 'width 0.3s ease, transform 0.3s ease',
-          transform: showMobileNav ? 'translateX(0)' : 'translateX(-100%)',
           flexShrink: 0
         }} 
-        className="nav-sidebar"
+        className={`nav-sidebar${showMobileNav ? ' nav-sidebar-open' : ''}`}
       >
         {/* Header */}
         <div style={{ 
@@ -362,15 +364,18 @@ const TraumaChatDemo = () => {
       </nav>
 
       {/* Main Chat Area */}
-      <div style={{
-        flex: 1,
-        minWidth: 0,
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        overflow: 'hidden',
-        transition: 'margin-left 0.3s ease'
-      }}>
+      <div
+        style={{
+          flex: 1,
+          minWidth: 0,
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          overflow: 'hidden',
+          transition: 'margin-left 0.3s ease'
+        }}
+        className="main-chat-area"
+      >
         {/* Chat Header */}
         <div style={{
           background: 'rgba(255, 255, 255, 0.85)',
@@ -613,32 +618,64 @@ const TraumaChatDemo = () => {
             transform: translateY(0) scale(1);
           }
         }
-
         @media (max-width: 768px) {
           .mobile-menu-btn {
             display: block !important;
           }
-          
           .nav-sidebar {
-            transform: ${showMobileNav ? 'translateX(0)' : 'translateX(-100%)'} !important;
-            width: 80vw !important;
-            max-width: 320px !important;
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            width: 100vw !important;
+            max-width: 100vw !important;
+            height: auto !important;
+            min-height: 0 !important;
+            z-index: 2001;
+            transform: translateY(-120%) !important;
+            transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+            box-shadow: 0 8px 32px rgba(60,90,130,0.08);
+            border-right: none;
+            border-bottom: 1px solid rgba(219,230,243,0.6);
+            flex-direction: column !important;
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
           }
-          
-          .mobile-overlay {
-            display: block !important;
+          .nav-sidebar.nav-sidebar-open {
+            transform: translateY(0) !important;
+          }
+          .main-chat-area {
+            min-width: 0 !important;
+            width: 100vw !important;
+            height: auto !important;
+            padding: 0.5rem !important;
           }
         }
-
         @media (min-width: 769px) {
           .nav-sidebar {
             transform: translateX(0) !important;
+            position: relative !important;
+            width: ${isNavCollapsed ? '96px' : '280px'} !important;
+            max-width: 280px !important;
+            height: 100% !important;
+            min-height: 400px !important;
+            box-shadow: 0 0 32px rgba(60, 90, 130, 0.04) !important;
+            border-right: 1px solid rgba(219, 230, 243, 0.6) !important;
+            border-bottom: none !important;
+            padding-top: 2rem !important;
+            padding-bottom: 2rem !important;
+            flex-direction: column !important;
+          }
+          .main-chat-area {
+            min-width: 0;
+            width: auto;
+            height: 100%;
+            padding: 0;
           }
         }
-
         @media (max-width: 480px) {
           .nav-sidebar {
-            width: 90vw !important;
+            width: 100vw !important;
+            max-width: 100vw !important;
           }
         }
       `}</style>

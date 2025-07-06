@@ -1,7 +1,6 @@
 <header class="bg-white border-b border-black/5">
   <div class="w-full mx-auto lg:px-12 px-8 max-w-7xl lg:px-16">
     <div
-      x-data="{ open: false }"
       class="relative flex flex-col w-full py-5 mx-auto bg-white lg:items-center lg:justify-between lg:flex-row lg:px-6">
       <div class="flex flex-row items-center justify-between lg:justify-start">
         <a href="/" class="text-black inline-flex items-center gap-3">
@@ -9,38 +8,32 @@
           <span class="font-bold font-display">Process</span>
         </a>
         <button
-          @click="open = !open"
-          :aria-expanded="open.toString()"
+          id="mobile-menu-toggle"
+          aria-expanded="false"
           aria-controls="main-navigation"
           aria-label="Toggle navigation menu"
           class="inline-flex items-center justify-center p-2 text-base-400 hover:text-black focus:outline-none focus:text-black lg:hidden">
           <svg
-            :class="{'rotate-90': open}"
+            id="mobile-menu-icon"
             class="w-6 h-6 transition-transform duration-300 ease-in-out"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24">
             <path
-              x-show="!open"
+              id="menu-icon-path"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
               d="M4 6h16M4 12h16M4 18h16">
             </path>
-            <path
-              x-show="open"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12">
-            </path>
           </svg>
         </button>
       </div>
       <nav
-        :class="{'h-auto': open, 'h-0': !open}"
         id="main-navigation"
-        class="flex-col items-center flex-grow gap-4 lg:gap-8 flex overflow-hidden lg:pb-0 lg:flex lg:justify-end lg:h-auto lg:flex-row">
+        class="flex-col items-center flex-grow gap-4 lg:gap-8 flex overflow-hidden lg:pb-0 lg:flex lg:justify-end lg:h-auto lg:flex-row h-0 lg:h-auto transition-[height] duration-300"
+        style="height: 0;"
+      >
         <a
           class="text-sm text-black transition duration-300 hover:text-primary lg:ml-auto"
           href="/#features">
@@ -65,7 +58,6 @@
           class="text-sm text-black transition duration-300 hover:text-primary relative">
           FAQ
         </a>
-
         <div class="inline-flex items-center gap-2 list-none py-px lg:ml-auto">
           <a
             href="/waitlist"
@@ -81,4 +73,52 @@
       </nav>
     </div>
   </div>
+  <script type="text/javascript">
+    (() => {
+      const menuToggle = document.getElementById('mobile-menu-toggle');
+      const nav = document.getElementById('main-navigation');
+      const menuIconPath = document.getElementById('menu-icon-path');
+      let isOpen = false;
+
+      // Helper to update menu state
+      function setMenu(open) {
+        isOpen = open;
+        menuToggle.setAttribute('aria-expanded', open.toString());
+        if (open) {
+          nav.style.height = nav.scrollHeight + 'px';
+          menuIconPath.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // X icon
+        } else {
+          nav.style.height = '0';
+          menuIconPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'); // Hamburger
+        }
+      }
+
+      // Toggle menu on button click
+      menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setMenu(!isOpen);
+      });
+
+      // Close menu when clicking a nav link (on mobile)
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth < 1024) setMenu(false);
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (isOpen && window.innerWidth < 1024) {
+          if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+            setMenu(false);
+          }
+        }
+      });
+
+      // Responsive: close menu on resize to desktop
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024) setMenu(false);
+      });
+    })();
+  </script>
 </header>
