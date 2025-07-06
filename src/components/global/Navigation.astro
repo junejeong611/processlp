@@ -52,9 +52,21 @@
   <!-- Mobile nav drawer (fixed, overlays content) -->
   <nav
     id="main-navigation"
-    class="flex flex-col items-center flex-grow gap-4 overflow-hidden pb-0 justify-end h-auto transition-[height] duration-300"
+    class="flex flex-col items-start flex-grow gap-4 overflow-hidden pb-0 justify-end h-auto transition-[height] duration-300"
   >
-    <div class="mobile-drawer-logo flex-col items-center justify-center mb-6 lg:hidden hidden">
+    <!-- Close (X) button inside drawer -->
+    <button
+      id="mobile-menu-close"
+      aria-label="Close navigation menu"
+      class="absolute top-4 left-4 z-10 flex items-center justify-center w-12 h-12 bg-white rounded-xl shadow-md border-none"
+      style="box-shadow: 0 4px 12px rgba(0,0,0,0.10);"
+      type="button"
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div class="mobile-drawer-logo flex-row items-center justify-center mb-2 lg:hidden hidden">
       <a href="/" class="flex flex-row items-center gap-2">
         <img width="40" src="/logo.svg" alt="logo" />
         <span class="font-bold font-display text-lg">Process</span>
@@ -76,6 +88,7 @@
       const menuToggle = document.getElementById('mobile-menu-toggle');
       const nav = document.getElementById('main-navigation');
       const menuIconPath = document.getElementById('menu-icon-path');
+      const menuClose = document.getElementById('mobile-menu-close');
       let isOpen = false;
 
       // Helper to update menu state
@@ -133,6 +146,14 @@
       if (window.innerWidth >= 1024) {
         nav.style.height = '';
       }
+
+      // Add close button handler
+      if (menuClose) {
+        menuClose.addEventListener('click', (e) => {
+          e.stopPropagation();
+          setMenu(false);
+        });
+      }
     })();
   </script>
   <style>
@@ -162,7 +183,7 @@
       .mobile-drawer-logo {
         display: none !important;
         align-items: center !important;
-        justify-content: center !important;
+        justify-content: flex-start !important;
         margin-bottom: 0.5rem !important;
       }
       #main-navigation.nav-mobile-drawer .mobile-drawer-logo {
@@ -199,6 +220,7 @@
         display: flex;
         flex-direction: column;
         padding: 0 1.5rem 1rem 1.5rem;
+        align-items: flex-start !important;
         gap: 0.5rem;
         min-height: 100vh;
         height: 100vh;
