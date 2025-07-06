@@ -32,11 +32,18 @@
           </a>
         </div>
       </div>
+      <!-- Mobile-only logo at the top -->
+      <div class="flex flex-col items-center justify-center mt-4 mb-2 lg:hidden">
+        <a href="/" class="flex flex-col items-center gap-1">
+          <img width="40" src="/logo.svg" alt="logo" />
+          <span class="font-bold font-display text-lg">Process</span>
+        </a>
+      </div>
       <nav
         id="main-navigation"
         class="flex flex-col lg:flex-row items-center flex-grow gap-4 lg:gap-8 overflow-hidden lg:pb-0 lg:justify-end lg:h-auto transition-[height] duration-300"
       >
-        <div class="mobile-drawer-logo flex-col items-center justify-center mb-6">
+        <div class="mobile-drawer-logo flex-col items-center justify-center mb-6 lg:hidden hidden">
           <a href="/" class="flex flex-col items-center gap-2">
             <img width="40" src="/logo.svg" alt="logo" />
             <span class="font-bold font-display text-lg">Process</span>
@@ -84,7 +91,7 @@
       </nav>
     </div>
   </div>
-  <script type="text/javascript">
+  <script is:inline type="text/javascript">
     (() => {
       const menuToggle = document.getElementById('mobile-menu-toggle');
       const nav = document.getElementById('main-navigation');
@@ -173,10 +180,13 @@
         display: none !important;
       }
       .mobile-drawer-logo {
-        display: flex !important;
+        display: none !important;
         align-items: center !important;
         justify-content: center !important;
         margin-bottom: 2rem !important;
+      }
+      #main-navigation.nav-mobile-drawer .mobile-drawer-logo {
+        display: flex !important;
       }
       .mobile-hamburger {
         position: absolute !important;
