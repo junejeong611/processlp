@@ -162,6 +162,7 @@ const TraumaChatDemo = () => {
         position: 'relative',
         overflow: 'hidden'
       }}
+      className="trauma-chat-demo-outer"
     >
       {/* Mobile Menu Button */}
       <button
@@ -629,8 +630,17 @@ const TraumaChatDemo = () => {
             height: auto !important;
             padding: 0.5rem !important;
           }
+          .trauma-chat-demo-outer {
+            height: auto !important;
+            min-height: 400px !important;
+          }
         }
         @media (min-width: 769px) {
+          .trauma-chat-demo-outer {
+            height: 650px !important;
+            min-height: 650px !important;
+            max-height: 650px !important;
+          }
           .nav-sidebar {
             transform: translateX(0) !important;
             position: relative !important;
@@ -648,14 +658,8 @@ const TraumaChatDemo = () => {
           .main-chat-area {
             min-width: 0;
             width: auto;
-            height: 100%;
+            height: 100% !important;
             padding: 0;
-          }
-        }
-        @media (max-width: 480px) {
-          .nav-sidebar {
-            width: 100vw !important;
-            max-width: 100vw !important;
           }
         }
       `}</style>
