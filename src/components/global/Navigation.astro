@@ -1,10 +1,6 @@
 <header class="bg-white border-b border-black/5">
-  <!-- Mobile header: logo and hamburger side by side -->
-  <div class="flex flex-row items-center justify-between w-full px-4 py-2 lg:hidden">
-    <a href="/" class="flex flex-row items-center gap-2">
-      <img width="40" src="/logo.svg" alt="logo" />
-      <span class="font-bold font-display text-lg">Process</span>
-    </a>
+  <!-- Mobile header: hamburger left, logo right -->
+  <div class="flex flex-row items-center justify-between w-full px-4 py-0 lg:hidden" style="min-height:56px;">
     <button
       id="mobile-menu-toggle"
       aria-expanded="false"
@@ -26,6 +22,10 @@
         </path>
       </svg>
     </button>
+    <a href="/" class="flex flex-row items-center gap-2">
+      <img width="40" src="/logo.svg" alt="logo" />
+      <span class="font-bold font-display text-lg">Process</span>
+    </a>
   </div>
   <!-- Desktop flex row: logo and nav -->
   <div class="w-full mx-auto lg:px-12 px-8 max-w-7xl lg:px-16 hidden lg:flex flex-row items-center justify-between py-5 bg-white">
@@ -53,8 +53,8 @@
     id="main-navigation"
     class="flex flex-col items-center flex-grow gap-4 overflow-hidden pb-0 justify-end h-auto transition-[height] duration-300"
   >
-    <!-- Drawer header: logo and close button side by side -->
-    <div class="flex flex-row items-center justify-between w-full px-4 pt-4 lg:hidden" style="min-height:56px;">
+    <!-- Drawer header: logo and close button side by side, flush top -->
+    <div class="flex flex-row items-center justify-between w-full px-4 pt-0 lg:hidden" style="min-height:56px;">
       <a href="/" class="flex flex-row items-center gap-2 mobile-drawer-logo">
         <img width="40" src="/logo.svg" alt="logo" />
         <span class="font-bold font-display text-lg">Process</span>
@@ -180,7 +180,8 @@
       }
       /* Drawer header row */
       #main-navigation > .flex.flex-row.items-center.justify-between {
-        margin-bottom: 0.5rem !important;
+        margin-bottom: 0 !important;
+        padding-top: 0 !important;
       }
       /* Hide old drawer logo */
       .mobile-drawer-logo {
@@ -197,6 +198,12 @@
       /* Remove extra top space in nav drawer */
       #main-navigation.nav-mobile-drawer {
         padding-top: 0 !important;
+      }
+      /* Remove extra vertical padding from header */
+      header > div.flex.flex-row.items-center.justify-between {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        min-height: 56px !important;
       }
       .topbar-mobile-hide {
         display: none !important;
