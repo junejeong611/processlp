@@ -1,96 +1,76 @@
 <header class="bg-white border-b border-black/5">
-  <div class="w-full mx-auto lg:px-12 px-8 max-w-7xl lg:px-16">
-    <!-- Floating Hamburger for Mobile -->
-    <button
-      id="mobile-menu-toggle"
-      aria-expanded="false"
-      aria-controls="main-navigation"
-      aria-label="Toggle navigation menu"
-      class="mobile-hamburger-fixed lg:hidden">
-      <svg
-        id="mobile-menu-icon"
-        class="w-6 h-6 transition-transform duration-300 ease-in-out"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24">
-        <path
-          id="menu-icon-path"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16">
-        </path>
-      </svg>
-    </button>
-    <div
-      class="relative flex flex-col w-full py-5 mx-auto bg-white lg:items-center lg:justify-between lg:flex-row lg:px-6 topbar-mobile-hide">
-      <div class="flex flex-row items-center justify-between lg:justify-start relative topbar-mobile-hide">
-        <div class="flex flex-row items-center gap-3 mx-auto lg:mx-0 w-full justify-center lg:justify-start lg:pl-0 pl-12 logo-title-desktop">
-          <a href="/" class="text-black inline-flex items-center gap-3">
-            <img width="40" src="/logo.svg" alt="logo" />
-            <span class="font-bold font-display">Process</span>
-          </a>
-        </div>
-      </div>
-      <!-- Mobile-only logo at the top -->
-      <div class="flex flex-col items-center justify-center mt-4 mb-2 lg:hidden">
-        <a href="/" class="flex flex-col items-center gap-1">
-          <img width="40" src="/logo.svg" alt="logo" />
-          <span class="font-bold font-display text-lg">Process</span>
-        </a>
-      </div>
-      <nav
-        id="main-navigation"
-        class="flex flex-col lg:flex-row items-center flex-grow gap-4 lg:gap-8 overflow-hidden lg:pb-0 lg:justify-end lg:h-auto transition-[height] duration-300"
-      >
-        <div class="mobile-drawer-logo flex-col items-center justify-center mb-6 lg:hidden hidden">
-          <a href="/" class="flex flex-col items-center gap-2">
-            <img width="40" src="/logo.svg" alt="logo" />
-            <span class="font-bold font-display text-lg">Process</span>
-          </a>
-        </div>
-        <a
-          class="text-sm text-black transition duration-300 hover:text-primary lg:ml-auto"
-          href="/#features">
-          Features
-        </a>
-        <a
-          href="/pricing"
-          class="text-sm text-black transition duration-300 hover:text-primary relative">
-          Pricing
-        </a>
-        <a
-          href="/waitlist"
-          class="text-sm text-black transition duration-300 hover:text-primary relative">
-          Waitlist
-          <span
-            class="bg-blue-500 ms-1 text-white text-[10px] px-2 py-1 rounded-full hidden-mobile-join lg:inline">
-            JOIN
-          </span>
-        </a>
-        <a
-          href="/faq"
-          class="text-sm text-black transition duration-300 hover:text-primary relative">
-          FAQ
-        </a>
-        <div class="mobile-auth-links flex-col w-full gap-0 lg:flex-row lg:gap-2 inline-flex items-stretch list-none py-px lg:ml-auto">
-          <a
-            href="/waitlist"
-            class="text-sm text-black transition duration-300 hover:text-primary w-full text-left px-0 py-3 lg:flex lg:items-center lg:justify-center lg:transition lg:px-4 lg:py-2 lg:rounded-md lg:bg-primary-light lg:text-white lg:hover:bg-primary lg:text-xs lg:font-medium lg:h-8 lg:mb-0 lg:mr-2 lg:w-auto">
-            Sign up
-          </a>
-          <a
-            href="#"
-            tabindex="-1"
-            aria-disabled="true"
-            class="text-sm text-black/40 cursor-not-allowed opacity-60 w-full text-left px-0 py-3 lg:bg-base-50 lg:text-base-700 lg:hover:bg-base-50 lg:focus:ring-0 lg:focus:outline-none lg:h-8 lg:px-4 lg:py-2 lg:text-xs lg:font-medium lg:rounded-md lg:w-auto select-none"
-            onclick="return false;">
-            Log in
-          </a>
-        </div>
-      </nav>
-    </div>
+  <!-- Mobile-only logo at the very top -->
+  <div class="flex flex-col items-center justify-center mt-4 mb-2 lg:hidden">
+    <a href="/" class="flex flex-col items-center gap-1">
+      <img width="40" src="/logo.svg" alt="logo" />
+      <span class="font-bold font-display text-lg">Process</span>
+    </a>
   </div>
+  <!-- Hamburger for Mobile -->
+  <button
+    id="mobile-menu-toggle"
+    aria-expanded="false"
+    aria-controls="main-navigation"
+    aria-label="Toggle navigation menu"
+    class="mobile-hamburger-fixed lg:hidden">
+    <svg
+      id="mobile-menu-icon"
+      class="w-6 h-6 transition-transform duration-300 ease-in-out"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24">
+      <path
+        id="menu-icon-path"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16">
+      </path>
+    </svg>
+  </button>
+  <!-- Desktop flex row: logo and nav -->
+  <div class="w-full mx-auto lg:px-12 px-8 max-w-7xl lg:px-16 hidden lg:flex flex-row items-center justify-between py-5 bg-white">
+    <div class="flex flex-row items-center gap-3">
+      <a href="/" class="text-black inline-flex items-center gap-3">
+        <img width="40" src="/logo.svg" alt="logo" />
+        <span class="font-bold font-display">Process</span>
+      </a>
+    </div>
+    <nav id="main-navigation-desktop" class="flex flex-row items-center gap-8">
+      <a class="text-sm text-black transition duration-300 hover:text-primary" href="/#features">Features</a>
+      <a href="/pricing" class="text-sm text-black transition duration-300 hover:text-primary relative">Pricing</a>
+      <a href="/waitlist" class="text-sm text-black transition duration-300 hover:text-primary relative">Waitlist
+        <span class="bg-blue-500 ms-1 text-white text-[10px] px-2 py-1 rounded-full hidden-mobile-join lg:inline">JOIN</span>
+      </a>
+      <a href="/faq" class="text-sm text-black transition duration-300 hover:text-primary relative">FAQ</a>
+      <div class="flex flex-row gap-2 items-center">
+        <a href="/waitlist" class="text-sm text-black transition duration-300 hover:text-primary px-4 py-2 rounded-md bg-primary-light text-white hover:bg-primary text-xs font-medium h-8 mr-2">Sign up</a>
+        <a href="#" tabindex="-1" aria-disabled="true" class="text-sm text-black/40 cursor-not-allowed opacity-60 px-4 py-2 text-xs font-medium rounded-md w-auto select-none" onclick="return false;">Log in</a>
+      </div>
+    </nav>
+  </div>
+  <!-- Mobile nav drawer (fixed, overlays content) -->
+  <nav
+    id="main-navigation"
+    class="flex flex-col items-center flex-grow gap-4 overflow-hidden pb-0 justify-end h-auto transition-[height] duration-300"
+  >
+    <div class="mobile-drawer-logo flex-col items-center justify-center mb-6 lg:hidden hidden">
+      <a href="/" class="flex flex-col items-center gap-2">
+        <img width="40" src="/logo.svg" alt="logo" />
+        <span class="font-bold font-display text-lg">Process</span>
+      </a>
+    </div>
+    <a class="text-sm text-black transition duration-300 hover:text-primary" href="/#features">Features</a>
+    <a href="/pricing" class="text-sm text-black transition duration-300 hover:text-primary relative">Pricing</a>
+    <a href="/waitlist" class="text-sm text-black transition duration-300 hover:text-primary relative">Waitlist
+      <span class="bg-blue-500 ms-1 text-white text-[10px] px-2 py-1 rounded-full hidden-mobile-join lg:inline">JOIN</span>
+    </a>
+    <a href="/faq" class="text-sm text-black transition duration-300 hover:text-primary relative">FAQ</a>
+    <div class="mobile-auth-links flex-col w-full gap-0 inline-flex items-stretch list-none py-px">
+      <a href="/waitlist" class="text-sm text-black transition duration-300 hover:text-primary w-full text-left px-0 py-3 flex items-center justify-center transition px-4 py-2 rounded-md bg-primary-light text-white hover:bg-primary text-xs font-medium h-8 mb-0 mr-2 w-auto">Sign up</a>
+      <a href="#" tabindex="-1" aria-disabled="true" class="text-sm text-black/40 cursor-not-allowed opacity-60 w-full text-left px-0 py-3 bg-base-50 text-base-700 hover:bg-base-50 focus:ring-0 focus:outline-none h-8 px-4 py-2 text-xs font-medium rounded-md w-auto select-none" onclick="return false;">Log in</a>
+    </div>
+  </nav>
   <script is:inline type="text/javascript">
     (() => {
       const menuToggle = document.getElementById('mobile-menu-toggle');
