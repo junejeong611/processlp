@@ -152,17 +152,15 @@ const TraumaChatDemo = () => {
 
   return (
     <div
+      className="trauma-chat-demo-outer flex flex-col sm:flex-row w-full max-w-md md:max-w-3xl lg:max-w-4xl mx-auto px-2 sm:px-0"
       style={{ 
         fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
         minHeight: '400px',
         height: '100%',
-        display: 'flex',
-        flexDirection: 'row',
         background: 'linear-gradient(135deg, #f7fafc 0%, #e8f2ff 50%, #ffffff 100%)',
         position: 'relative',
         overflow: 'hidden'
       }}
-      className="trauma-chat-demo-outer"
     >
       {/* Mobile Menu Button */}
       <button
@@ -378,11 +376,11 @@ const TraumaChatDemo = () => {
         className="main-chat-area"
       >
         {/* Chat Header */}
-        <div style={{
+        <div className="main-chat-header" style={{
           background: 'rgba(255, 255, 255, 0.85)',
           backdropFilter: 'blur(16px)',
           borderBottom: '1px solid rgba(226, 232, 240, 0.6)',
-          padding: '2rem 2rem 1.5rem',
+          padding: undefined,
           display: 'flex',
           alignItems: 'flex-start',
           justifyContent: 'space-between',
@@ -533,11 +531,11 @@ const TraumaChatDemo = () => {
         </div>
 
         {/* Input Area - Disabled for demo */}
-        <div style={{
+        <div className="main-chat-input" style={{
           background: 'rgba(255, 255, 255, 0.95)',
           backdropFilter: 'blur(16px)',
           borderTop: '1px solid rgba(226, 232, 240, 0.6)',
-          padding: '1.5rem 2rem'
+          padding: undefined
         }}>
           <div style={{
             background: '#ffffff',
@@ -628,16 +626,35 @@ const TraumaChatDemo = () => {
             max-height: 75vh !important;
             min-height: 320px !important;
             height: auto !important;
-            width: 100vw !important;
-            overflow: hidden !important;
+            width: 100% !important;
+            max-width: none !important;
+            margin: 0 !important;
+            box-sizing: border-box !important;
+            padding: 0.5rem !important;
           }
           .main-chat-area {
             min-width: 0 !important;
-            width: 100vw !important;
-            height: calc(75vh - 0.5rem) !important;
-            max-height: calc(75vh - 0.5rem) !important;
-            padding: 0.5rem !important;
-            overflow-y: auto !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+            padding: 0 !important;
+          }
+          .main-chat-header,
+          .main-chat-input {
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+          }
+          .main-chat-input,
+          .main-chat-input > div {
+            width: 100% !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            border-radius: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            box-sizing: border-box !important;
           }
         }
         @media (min-width: 769px) {
@@ -665,6 +682,12 @@ const TraumaChatDemo = () => {
             width: auto;
             height: 100% !important;
             padding: 0;
+          }
+          .main-chat-header {
+            padding: 2rem 2rem 1.5rem !important;
+          }
+          .main-chat-input {
+            padding: 1.5rem 2rem !important;
           }
         }
       `}</style>

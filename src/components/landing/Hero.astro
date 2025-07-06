@@ -17,7 +17,7 @@ import TraumaChatDemo from '../TraumaChatDemo.jsx';
 ---
 
 <section id="features" class="bg-gradient-to-br from-blue-50 via-white to-blue-100 border-base-200 overflow-hidden">
-  <div class="px-8 pt-2 md:pt-16 lg:pt-32 mx-auto md:px-12 lg:px-24 max-w-7xl relative">
+  <div class="px-8 pt-14 md:pt-28 lg:pt-56 mx-auto md:px-12 lg:px-24 max-w-7xl relative pb-32">
     <div class="max-w-2xl text-center mx-auto lg:text-balance mb-10">
       <p class="text-sm leading-normal font-bold uppercase text-primary">
         Complex Trauma Support
@@ -48,8 +48,19 @@ import TraumaChatDemo from '../TraumaChatDemo.jsx';
         </div>
       ))}
     </dl>
-    <div class="relative w-full mx-auto max-w-7xl items-center py-12 pb-12">
-      <TraumaChatDemo client:only="react" />
-    </div>
+  </div>
+</section>
+
+<!-- Mobile only: chat after hero -->
+<section class="block md:hidden w-full">
+  <div class="w-full">
+    <TraumaChatDemo client:only="react" />
+  </div>
+</section>
+
+<!-- Desktop: keep chat demo in hero as before -->
+<section class="hidden md:block mt-16">
+  <div class="relative w-full mx-auto max-w-7xl flex justify-center items-center py-12 pb-12">
+    <TraumaChatDemo client:only="react" />
   </div>
 </section>
