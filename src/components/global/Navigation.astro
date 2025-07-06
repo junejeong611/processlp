@@ -1,5 +1,5 @@
 <header class="bg-white border-b border-black/5">
-  <!-- Mobile header: hamburger left, logo centered -->
+  <!-- Mobile header: hamburger left, logo centered (MOBILE ONLY) -->
   <div class="flex flex-row items-center w-full px-4 py-0 lg:hidden" style="min-height:40px; height:48px;">
     <button
       id="mobile-menu-toggle"
@@ -29,7 +29,7 @@
       </a>
     </div>
   </div>
-  <!-- Desktop flex row: logo and nav -->
+  <!-- Desktop header: ONLY VISIBLE ON DESKTOP -->
   <div class="w-full mx-auto lg:px-12 px-8 max-w-7xl lg:px-16 hidden lg:flex flex-row items-center justify-between py-5 bg-white">
     <div class="flex flex-row items-center gap-3">
       <a href="/" class="text-black inline-flex items-center gap-3">
@@ -53,7 +53,7 @@
   <!-- Mobile nav drawer (fixed, overlays content) -->
   <nav
     id="main-navigation"
-    class="flex flex-col items-center flex-grow gap-4 overflow-hidden pb-0 justify-end h-auto transition-[height] duration-300"
+    class="flex flex-col items-center flex-grow gap-4 overflow-hidden pb-0 justify-end h-auto transition-[height] duration-300 lg:hidden"
   >
     <!-- Drawer header: logo only, no close button -->
     <div class="flex flex-row items-center justify-center w-full px-4 pt-0 lg:hidden" style="min-height:56px;">
@@ -294,21 +294,7 @@
     }
     @media (min-width: 1024px) {
       #main-navigation {
-        transform: none !important;
-        position: static !important;
-        width: auto !important;
-        max-width: none !important;
-        height: auto !important;
-        min-height: 0 !important;
-        max-height: none !important;
-        background: none !important;
-        box-shadow: none !important;
-        z-index: auto !important;
-        overflow: visible !important;
-        display: flex !important;
-        flex-direction: row !important;
-        padding: 0 !important;
-        gap: 2rem !important;
+        display: none !important;
       }
       .mobile-auth-links {
         flex-direction: row !important;
