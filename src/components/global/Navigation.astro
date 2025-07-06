@@ -1,12 +1,12 @@
 <header class="bg-white border-b border-black/5">
-  <!-- Mobile header: hamburger left, logo right -->
-  <div class="flex flex-row items-center justify-between w-full px-4 py-0 lg:hidden" style="min-height:56px;">
+  <!-- Mobile header: hamburger left, logo centered -->
+  <div class="relative flex flex-row items-center w-full px-4 py-0 lg:hidden" style="min-height:56px;">
     <button
       id="mobile-menu-toggle"
       aria-expanded="false"
       aria-controls="main-navigation"
       aria-label="Toggle navigation menu"
-      class="mobile-hamburger-fixed lg:hidden">
+      class="mobile-hamburger-fixed lg:hidden absolute left-0 top-1/2 -translate-y-1/2">
       <svg
         id="mobile-menu-icon"
         class="w-6 h-6 transition-transform duration-300 ease-in-out"
@@ -22,10 +22,12 @@
         </path>
       </svg>
     </button>
-    <a href="/" class="flex flex-row items-center gap-2">
-      <img width="40" src="/logo.svg" alt="logo" />
-      <span class="font-bold font-display text-lg">Process</span>
-    </a>
+    <div class="flex-1 flex justify-center">
+      <a href="/" class="flex flex-row items-center gap-2">
+        <img width="40" src="/logo.svg" alt="logo" />
+        <span class="font-bold font-display text-lg">Process</span>
+      </a>
+    </div>
   </div>
   <!-- Desktop flex row: logo and nav -->
   <div class="w-full mx-auto lg:px-12 px-8 max-w-7xl lg:px-16 hidden lg:flex flex-row items-center justify-between py-5 bg-white">
@@ -53,23 +55,12 @@
     id="main-navigation"
     class="flex flex-col items-center flex-grow gap-4 overflow-hidden pb-0 justify-end h-auto transition-[height] duration-300"
   >
-    <!-- Drawer header: logo and close button side by side, flush top -->
-    <div class="flex flex-row items-center justify-between w-full px-4 pt-0 lg:hidden" style="min-height:56px;">
+    <!-- Drawer header: logo only, no close button -->
+    <div class="flex flex-row items-center justify-center w-full px-4 pt-0 lg:hidden" style="min-height:56px;">
       <a href="/" class="flex flex-row items-center gap-2 mobile-drawer-logo">
         <img width="40" src="/logo.svg" alt="logo" />
         <span class="font-bold font-display text-lg">Process</span>
       </a>
-      <button
-        id="mobile-menu-close"
-        aria-label="Close navigation menu"
-        class="z-10 flex items-center justify-center w-12 h-12 bg-white rounded-xl shadow-md border-none"
-        style="box-shadow: 0 4px 12px rgba(0,0,0,0.10);"
-        type="button"
-      >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
     </div>
     <a class="text-sm text-black transition duration-300 hover:text-primary" href="/#features">Features</a>
     <a href="/pricing" class="text-sm text-black transition duration-300 hover:text-primary relative">Pricing</a>
@@ -161,7 +152,7 @@
       header > div.flex.flex-col.items-center.justify-center {
         display: none !important;
       }
-      /* Adjust mobile hamburger for new row layout */
+      /* Adjust mobile hamburger for more compact look */
       .mobile-hamburger-fixed {
         position: static !important;
         margin-left: 0 !important;
@@ -169,17 +160,18 @@
         top: auto !important;
         left: auto !important;
         box-shadow: 0 4px 12px rgba(0,0,0,0.10) !important;
-        padding: 12px !important;
+        padding: 6px !important;
         z-index: 3000 !important;
         border: none !important;
         align-items: center !important;
         justify-content: center !important;
-        width: 48px !important;
-        height: 48px !important;
+        width: 36px !important;
+        height: 36px !important;
         background: #fff !important;
       }
       /* Drawer header row */
-      #main-navigation > .flex.flex-row.items-center.justify-between {
+      #main-navigation > .flex.flex-row.items-center.justify-between,
+      #main-navigation > .flex.flex-row.items-center.justify-center {
         margin-bottom: 0 !important;
         padding-top: 0 !important;
       }
@@ -200,10 +192,17 @@
         padding-top: 0 !important;
       }
       /* Remove extra vertical padding from header */
-      header > div.flex.flex-row.items-center.justify-between {
+      header > div.flex.flex-row.items-center.justify-between,
+      header > div.relative.flex.flex-row.items-center.w-full.px-4.py-0.lg\:hidden {
         padding-top: 0 !important;
         padding-bottom: 0 !important;
-        min-height: 56px !important;
+        min-height: 48px !important;
+      }
+      /* Reduce vertical padding on all mobile menu links */
+      #main-navigation a,
+      .mobile-auth-links a {
+        padding: 0.6rem 0 !important;
+        font-size: 1rem !important;
       }
       .topbar-mobile-hide {
         display: none !important;
