@@ -169,15 +169,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
 
           <!-- Pricing -->
-          <div class="w-full mx-auto border-b border-gray-200">
-            <button @click="setActiveAccordion('item-7')" class="flex items-center justify-between w-full px-0 py-6 text-left">
+          <div class="w-full mx-auto border-b border-gray-200 faq-item">
+            <button class="flex items-center justify-between w-full px-0 py-6 text-left faq-question" data-faq="item-7">
               <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
                 How much does Process cost?
               </span>
-              <span x-show="activeAccordion != 'item-7'" class="text-2xl" style="color: var(--color-primary)">+</span>
-              <span x-show="activeAccordion == 'item-7'" class="text-2xl" style="color: var(--color-primary)">−</span>
+              <span class="text-2xl faq-plus" style="color: var(--color-primary)">+</span>
+              <span class="text-2xl faq-minus" style="color: var(--color-primary); display: none;">−</span>
             </button>
-            <div x-show="activeAccordion == 'item-7'" x-transition style="color: var(--color-text-secondary)" class="pb-6">
+            <div class="faq-answer pb-6" data-faq="item-7" style="display: none; color: var(--color-text-secondary)">
               <p class="text-base leading-relaxed mb-4">
                 We believe trauma support should be accessible, so we offer:
               </p>
@@ -193,15 +193,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
 
           <!-- Who built this -->
-          <div class="w-full mx-auto border-b border-gray-200">
-            <button @click="setActiveAccordion('item-8')" class="flex items-center justify-between w-full px-0 py-6 text-left">
+          <div class="w-full mx-auto border-b border-gray-200 faq-item">
+            <button class="flex items-center justify-between w-full px-0 py-6 text-left faq-question" data-faq="item-8">
               <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
                 Who built Process and why should I trust it?
               </span>
-              <span x-show="activeAccordion != 'item-8'" class="text-2xl" style="color: var(--color-primary)">+</span>
-              <span x-show="activeAccordion == 'item-8'" class="text-2xl" style="color: var(--color-primary)">−</span>
+              <span class="text-2xl faq-plus" style="color: var(--color-primary)">+</span>
+              <span class="text-2xl faq-minus" style="color: var(--color-primary); display: none;">−</span>
             </button>
-            <div x-show="activeAccordion == 'item-8'" x-transition style="color: var(--color-text-secondary)" class="pb-6">
+            <div class="faq-answer pb-6" data-faq="item-8" style="display: none; color: var(--color-text-secondary)">
               <p class="text-base leading-relaxed mb-4">
                 Process is built by trauma survivors, for trauma survivors, grounded in our own lived experience of trauma. We both worked in tech until we realized that supporting others on their healing journey is our true calling and passion. Our work is guided by advisors from the trauma therapy community, ensuring that everything we build is rooted in empathy, understanding, and real-world expertise.
               </p>
@@ -209,15 +209,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
 
           <!-- Getting Started -->
-          <div class="w-full mx-auto">
-            <button @click="setActiveAccordion('item-9')" class="flex items-center justify-between w-full px-0 py-6 text-left">
+          <div class="w-full mx-auto faq-item">
+            <button class="flex items-center justify-between w-full px-0 py-6 text-left faq-question" data-faq="item-9">
               <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
                 How do I get started with Process?
               </span>
-              <span x-show="activeAccordion != 'item-9'" class="text-2xl" style="color: var(--color-primary)">+</span>
-              <span x-show="activeAccordion == 'item-9'" class="text-2xl" style="color: var(--color-primary)">−</span>
+              <span class="text-2xl faq-plus" style="color: var(--color-primary)">+</span>
+              <span class="text-2xl faq-minus" style="color: var(--color-primary); display: none;">−</span>
             </button>
-            <div x-show="activeAccordion == 'item-9'" x-transition style="color: var(--color-text-secondary)" class="pb-6">
+            <div class="faq-answer pb-6" data-faq="item-9" style="display: none; color: var(--color-text-secondary)">
               <p class="text-base leading-relaxed mb-4">
                 Process is currently in beta and available on a limited basis. To get early access, sign up for our waitlist!
               </p>
