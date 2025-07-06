@@ -23,8 +23,12 @@
         class="flex flex-col h-full p-1 lg:py-1 rounded-3xl ring-4 border" style="background-color: var(--color-bg-secondary); border-color: var(--color-bg-tertiary); ring-color: var(--color-bg-tertiary)">
         <div>
           <div class="flex flex-col gap-4 p-8 bg-white rounded-[1.3rem] h-full">
-            <div class="flex items-start justify-between w-full">
-              <div>
+            <div class="flex flex-col items-center sm:flex-row sm:items-start justify-between w-full">
+              <span
+                class="pricing-badge inline-flex items-center font-medium relative px-2.5 py-1 text-xs rounded-md mb-3 sm:mb-0 sm:mr-4" style="background-color: var(--color-accent)">
+                Always Free
+              </span>
+              <div class="text-center sm:text-left">
                 <h3
                   class="text-lg leading-normal sm:text-xl md:text-2xl font-medium" style="color: var(--color-text-primary)">
                   Free Support
@@ -33,10 +37,6 @@
                   Essential trauma support
                 </p>
               </div>
-              <span
-                class="inline-flex items-center font-medium relative text-white px-2.5 py-1 text-xs rounded-md" style="background-color: var(--color-accent)">
-                Always Free
-              </span>
             </div>
             <p class="text-base leading-normal font-medium" style="color: var(--color-text-secondary)">
               Get immediate access to trauma-informed AI support. No credit card required, no barriers to healing.
@@ -140,8 +140,12 @@
         <div>
           <div
             class="flex flex-col gap-4 p-8 bg-white/10 backdrop-blur-sm rounded-[1.3rem] h-full">
-            <div class="flex items-start justify-between w-full">
-              <div>
+            <div class="flex flex-col items-center sm:flex-row sm:items-start justify-between w-full">
+              <span
+                class="pricing-badge inline-flex items-center font-medium relative px-2.5 py-1 text-xs rounded-md mb-3 sm:mb-0 sm:mr-4 text-white" style="background-color: var(--color-accent)">
+                Best Value
+              </span>
+              <div class="text-center sm:text-left">
                 <h3
                   class="text-lg leading-normal sm:text-xl md:text-2xl font-medium text-white">
                   Premium Support
@@ -150,10 +154,6 @@
                   Enhanced healing tools
                 </p>
               </div>
-              <span
-                class="inline-flex items-center font-medium relative px-2.5 py-1 text-xs rounded-md text-white" style="background-color: var(--color-accent)">
-                Best Value
-              </span>
             </div>
             <p class="text-base leading-normal font-medium text-white/90">
               Unlock deeper insights and advanced features for accelerated healing and pattern recognition.
@@ -289,3 +289,18 @@
     </div>
   </div>
 </section>
+
+<style>
+  @media (max-width: 1023px) {
+    .pricing-badge {
+      display: inline-flex !important;
+      align-self: center !important;
+      font-size: 1rem !important;
+      padding: 0.5rem 1.25rem !important;
+      margin-bottom: 1rem !important;
+      margin-right: 0 !important;
+      border-radius: 1rem !important;
+      text-align: center !important;
+    }
+  }
+</style>

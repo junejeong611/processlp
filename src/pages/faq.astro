@@ -15,18 +15,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             Everything you need to know about Process and trauma-informed AI support
           </p>         
         </div>         
-        <div x-data="{ activeAccordion: '', setActiveAccordion(id) { this.activeAccordion = (this.activeAccordion == id) ? '' : id } }" class="relative w-full mx-auto font-normal lg:col-span-2">           
+        <div class="relative w-full mx-auto font-normal lg:col-span-2">           
           
           <!-- What is Process? -->
-          <div class="w-full mx-auto border-b border-gray-200">
-            <button @click="setActiveAccordion('item-1')" class="flex items-center justify-between w-full px-0 py-6 text-left">
+          <div class="w-full mx-auto border-b border-gray-200 faq-item">
+            <button class="flex items-center justify-between w-full px-0 py-6 text-left faq-question" data-faq="item-1">
               <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
                 What is Process and how is it different from other mental health apps?
               </span>
-              <span x-show="activeAccordion != 'item-1'" class="text-2xl" style="color: var(--color-primary)">+</span>
-              <span x-show="activeAccordion == 'item-1'" class="text-2xl" style="color: var(--color-primary)">−</span>
+              <span class="text-2xl faq-plus" style="color: var(--color-primary)">+</span>
+              <span class="text-2xl faq-minus" style="color: var(--color-primary); display: none;">−</span>
             </button>
-            <div x-show="activeAccordion == 'item-1'" x-transition style="color: var(--color-text-secondary)" class="pb-6">
+            <div class="faq-answer pb-6" data-faq="item-1" style="display: none; color: var(--color-text-secondary)">
               <p class="text-base leading-relaxed">
                 Made by and for people living with complex trauma, Process is an AI tool trained on EMDR, IFS, and somatic therapeutic principles. Unlike generic mental health apps that focus on general anxiety or depression, we address the emotional dysregulation and other challenges specific to complex trauma. Our AI guides you in understanding how you feel, and giving yourself the unconditional love and care you need, responding with trauma-informed care rather than generic "just breathe" advice or therapy-speak.
               </p>
@@ -34,37 +34,51 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
 
           <!-- Is this therapy? -->
-          <div class="w-full mx-auto border-b border-gray-200">
-            <button @click="setActiveAccordion('item-2')" class="flex items-center justify-between w-full px-0 py-6 text-left">
+          <div class="w-full mx-auto border-b border-gray-200 faq-item">
+            <button class="flex items-center justify-between w-full px-0 py-6 text-left faq-question" data-faq="item-2">
               <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
                 Is Process a replacement for therapy?
               </span>
-              <span x-show="activeAccordion != 'item-2'" class="text-2xl" style="color: var(--color-primary)">+</span>
-              <span x-show="activeAccordion == 'item-2'" class="text-2xl" style="color: var(--color-primary)">−</span>
+              <span class="text-2xl faq-plus" style="color: var(--color-primary)">+</span>
+              <span class="text-2xl faq-minus" style="color: var(--color-primary); display: none;">−</span>
             </button>
-            <div x-show="activeAccordion == 'item-2'" x-transition style="color: var(--color-text-secondary)" class="pb-6">
+            <div class="faq-answer pb-6" data-faq="item-2" style="display: none; color: var(--color-text-secondary)">
               <p class="text-base leading-relaxed mb-4">
                 No, Process is not a replacement for professional therapy. We're designed as a supportive tool that can-
               </p>
               <ul class="list-disc pl-6 space-y-2 text-base">
-                <li>Provide immediate support when you're overwhelmed or triggered but not in crisis</li>
-                <li>Help you learn your patterns and build emotional regulation skills using trauma-informed techniques</li>
-                <li>Support the majority of complex trauma survivors who don't have access to specialized or professional care</li>
-                <li>Think of us as a supportive friend who understands complex trauma and can help you process emotions safely while you work toward or alongside professional care.</li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="size-5 flex-shrink-0" style="color: var(--color-accent)">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M5 12l5 5l10 -10"></path>
+                  </svg>
+                  <span class="text-base leading-relaxed">
+                    <strong>Support the majority of complex trauma survivors who don't have access to trauma-informed resources</strong>
+                  </span>
+                </li>
+                <li>Think of us as a supportive friend who understands complex trauma and can help you process emotions safely at your own pace.</li>
               </ul>
             </div>
           </div>
 
           <!-- Safety and Crisis -->
-          <div class="w-full mx-auto border-b border-gray-200">
-            <button @click="setActiveAccordion('item-3')" class="flex items-center justify-between w-full px-0 py-6 text-left">
+          <div class="w-full mx-auto border-b border-gray-200 faq-item">
+            <button class="flex items-center justify-between w-full px-0 py-6 text-left faq-question" data-faq="item-3">
               <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
                 What if I'm in crisis or having thoughts of self-harm?
               </span>
-              <span x-show="activeAccordion != 'item-3'" class="text-2xl" style="color: var(--color-primary)">+</span>
-              <span x-show="activeAccordion == 'item-3'" class="text-2xl" style="color: var(--color-primary)">−</span>
+              <span class="text-2xl faq-plus" style="color: var(--color-primary)">+</span>
+              <span class="text-2xl faq-minus" style="color: var(--color-primary); display: none;">−</span>
             </button>
-            <div x-show="activeAccordion == 'item-3'" x-transition style="color: var(--color-text-secondary)" class="pb-6">
+            <div class="faq-answer pb-6" data-faq="item-3" style="display: none; color: var(--color-text-secondary)">
               <p class="text-base leading-relaxed mb-4">
                 Process is not equipped for crisis intervention. If you're experiencing thoughts of self-harm or suicide, please reach out for immediate help:
               </p>
@@ -81,15 +95,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
 
           <!-- Privacy and Security -->
-          <div class="w-full mx-auto border-b border-gray-200">
-            <button @click="setActiveAccordion('item-4')" class="flex items-center justify-between w-full px-0 py-6 text-left">
+          <div class="w-full mx-auto border-b border-gray-200 faq-item">
+            <button class="flex items-center justify-between w-full px-0 py-6 text-left faq-question" data-faq="item-4">
               <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
                 How do you protect my privacy and conversations?
               </span>
-              <span x-show="activeAccordion != 'item-4'" class="text-2xl" style="color: var(--color-primary)">+</span>
-              <span x-show="activeAccordion == 'item-4'" class="text-2xl" style="color: var(--color-primary)">−</span>
+              <span class="text-2xl faq-plus" style="color: var(--color-primary)">+</span>
+              <span class="text-2xl faq-minus" style="color: var(--color-primary); display: none;">−</span>
             </button>
-            <div x-show="activeAccordion == 'item-4'" x-transition style="color: var(--color-text-secondary)" class="pb-6">
+            <div class="faq-answer pb-6" data-faq="item-4" style="display: none; color: var(--color-text-secondary)">
               <p class="text-base leading-relaxed mb-4">
                 Your privacy is sacred to us. We understand trauma survivors need absolute safety:
               </p>
@@ -107,20 +121,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
 
           <!-- How AI Works -->
-          <div class="w-full mx-auto border-b border-gray-200">
-            <button @click="setActiveAccordion('item-5')" class="flex items-center justify-between w-full px-0 py-6 text-left">
+          <div class="w-full mx-auto border-b border-gray-200 faq-item">
+            <button class="flex items-center justify-between w-full px-0 py-6 text-left faq-question" data-faq="item-5">
               <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
                 How does your AI understand complex trauma?
               </span>
-              <span x-show="activeAccordion != 'item-5'" class="text-2xl" style="color: var(--color-primary)">+</span>
-              <span x-show="activeAccordion == 'item-5'" class="text-2xl" style="color: var(--color-primary)">−</span>
+              <span class="text-2xl faq-plus" style="color: var(--color-primary)">+</span>
+              <span class="text-2xl faq-minus" style="color: var(--color-primary); display: none;">−</span>
             </button>
-            <div x-show="activeAccordion == 'item-5'" x-transition style="color: var(--color-text-secondary)" class="pb-6">
+            <div class="faq-answer pb-6" data-faq="item-5" style="display: none; color: var(--color-text-secondary)">
               <p class="text-base leading-relaxed mb-4">
                 Our AI is specifically designed to support people with complex trauma by:
               </p>
               <ul class="list-disc pl-6 space-y-2 text-base mb-4">
-                <li><strong>Trauma-informed frameworks:</strong> Built using principles from EMDR, inner child work, and somatic experiencing, and developed in consultation with real trauma therapists—including insights learned through our own therapeutic journeys.</li>
+                <li><strong>Trauma-informed frameworks:</strong> Built using principles from EMDR, inner child work, and somatic experiencing, and developed through lived experience and research—including insights learned through our own therapeutic journeys.</li>
                 <li><strong>Recognizing underlying beliefs:</strong> Helps identify the core beliefs and patterns that often underlie complex trauma.</li>
                 <li><strong>Safety-first responses:</strong> Always prioritizes emotional regulation and your sense of safety before moving into deeper processing.</li>
                 <li><strong>Not just generic advice:</strong> This isn't a generic AI giving mindfulness tips—it's designed to truly understand the challenges of complex trauma and help you process emotions in a way that feels safe and supportive.</li>
@@ -129,15 +143,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
 
           <!-- Pattern Recognition -->
-          <div class="w-full mx-auto border-b border-gray-200">
-            <button @click="setActiveAccordion('item-6')" class="flex items-center justify-between w-full px-0 py-6 text-left">
+          <div class="w-full mx-auto border-b border-gray-200 faq-item">
+            <button class="flex items-center justify-between w-full px-0 py-6 text-left faq-question" data-faq="item-6">
               <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
                 How does Process help me understand my patterns and triggers?
               </span>
-              <span x-show="activeAccordion != 'item-6'" class="text-2xl" style="color: var(--color-primary)">+</span>
-              <span x-show="activeAccordion == 'item-6'" class="text-2xl" style="color: var(--color-primary)">−</span>
+              <span class="text-2xl faq-plus" style="color: var(--color-primary)">+</span>
+              <span class="text-2xl faq-minus" style="color: var(--color-primary); display: none;">−</span>
             </button>
-            <div x-show="activeAccordion == 'item-6'" x-transition style="color: var(--color-text-secondary)" class="pb-6">
+            <div class="faq-answer pb-6" data-faq="item-6" style="display: none; color: var(--color-text-secondary)">
               <p class="text-base leading-relaxed mb-4">
                 Through your conversations with our AI, Process identifies patterns and offers insights about:
               </p>
@@ -224,3 +238,39 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>   
   </section>  
 </BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const questions = document.querySelectorAll('.faq-question');
+    const answers = document.querySelectorAll('.faq-answer');
+    const pluses = document.querySelectorAll('.faq-plus');
+    const minuses = document.querySelectorAll('.faq-minus');
+    let active = null;
+    questions.forEach((btn, idx) => {
+      btn.addEventListener('click', function () {
+        const id = btn.getAttribute('data-faq');
+        answers.forEach((ans, i) => {
+          if (ans.getAttribute('data-faq') === id) {
+            const isOpen = ans.style.display === 'block';
+            ans.style.display = isOpen ? 'none' : 'block';
+            pluses[idx].style.display = isOpen ? '' : 'none';
+            minuses[idx].style.display = isOpen ? 'none' : '';
+          } else {
+            ans.style.display = 'none';
+            pluses[i].style.display = '';
+            minuses[i].style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  .faq-item {
+    margin-bottom: 1rem;
+  }
+  .faq-item:last-child {
+    margin-bottom: 0;
+  }
+</style>

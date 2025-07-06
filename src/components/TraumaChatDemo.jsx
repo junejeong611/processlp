@@ -624,15 +624,20 @@ const TraumaChatDemo = () => {
           .demo-sidebar-toggle {
             display: none !important;
           }
+          .trauma-chat-demo-outer {
+            max-height: 75vh !important;
+            min-height: 320px !important;
+            height: auto !important;
+            width: 100vw !important;
+            overflow: hidden !important;
+          }
           .main-chat-area {
             min-width: 0 !important;
             width: 100vw !important;
-            height: auto !important;
+            height: calc(75vh - 0.5rem) !important;
+            max-height: calc(75vh - 0.5rem) !important;
             padding: 0.5rem !important;
-          }
-          .trauma-chat-demo-outer {
-            height: auto !important;
-            min-height: 400px !important;
+            overflow-y: auto !important;
           }
         }
         @media (min-width: 769px) {
