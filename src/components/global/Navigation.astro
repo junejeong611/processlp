@@ -1,33 +1,32 @@
 <header class="bg-white border-b border-black/5">
-  <!-- Mobile-only logo at the very top -->
-  <div class="flex flex-col items-center justify-center mt-4 mb-0 lg:hidden">
+  <!-- Mobile header: logo and hamburger side by side -->
+  <div class="flex flex-row items-center justify-between w-full px-4 py-2 lg:hidden">
     <a href="/" class="flex flex-row items-center gap-2">
       <img width="40" src="/logo.svg" alt="logo" />
       <span class="font-bold font-display text-lg">Process</span>
     </a>
+    <button
+      id="mobile-menu-toggle"
+      aria-expanded="false"
+      aria-controls="main-navigation"
+      aria-label="Toggle navigation menu"
+      class="mobile-hamburger-fixed lg:hidden">
+      <svg
+        id="mobile-menu-icon"
+        class="w-6 h-6 transition-transform duration-300 ease-in-out"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24">
+        <path
+          id="menu-icon-path"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16">
+        </path>
+      </svg>
+    </button>
   </div>
-  <!-- Hamburger for Mobile -->
-  <button
-    id="mobile-menu-toggle"
-    aria-expanded="false"
-    aria-controls="main-navigation"
-    aria-label="Toggle navigation menu"
-    class="mobile-hamburger-fixed lg:hidden">
-    <svg
-      id="mobile-menu-icon"
-      class="w-6 h-6 transition-transform duration-300 ease-in-out"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24">
-      <path
-        id="menu-icon-path"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M4 6h16M4 12h16M4 18h16">
-      </path>
-    </svg>
-  </button>
   <!-- Desktop flex row: logo and nav -->
   <div class="w-full mx-auto lg:px-12 px-8 max-w-7xl lg:px-16 hidden lg:flex flex-row items-center justify-between py-5 bg-white">
     <div class="flex flex-row items-center gap-3">
@@ -52,25 +51,25 @@
   <!-- Mobile nav drawer (fixed, overlays content) -->
   <nav
     id="main-navigation"
-    class="flex flex-col items-start flex-grow gap-4 overflow-hidden pb-0 justify-end h-auto transition-[height] duration-300"
+    class="flex flex-col items-center flex-grow gap-4 overflow-hidden pb-0 justify-end h-auto transition-[height] duration-300"
   >
-    <!-- Close (X) button inside drawer -->
-    <button
-      id="mobile-menu-close"
-      aria-label="Close navigation menu"
-      class="absolute top-4 left-4 z-10 flex items-center justify-center w-12 h-12 bg-white rounded-xl shadow-md border-none"
-      style="box-shadow: 0 4px 12px rgba(0,0,0,0.10);"
-      type="button"
-    >
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
-    <div class="mobile-drawer-logo flex-row items-center justify-center mb-2 lg:hidden hidden">
-      <a href="/" class="flex flex-row items-center gap-2">
+    <!-- Drawer header: logo and close button side by side -->
+    <div class="flex flex-row items-center justify-between w-full px-4 pt-4 lg:hidden" style="min-height:56px;">
+      <a href="/" class="flex flex-row items-center gap-2 mobile-drawer-logo">
         <img width="40" src="/logo.svg" alt="logo" />
         <span class="font-bold font-display text-lg">Process</span>
       </a>
+      <button
+        id="mobile-menu-close"
+        aria-label="Close navigation menu"
+        class="z-10 flex items-center justify-center w-12 h-12 bg-white rounded-xl shadow-md border-none"
+        style="box-shadow: 0 4px 12px rgba(0,0,0,0.10);"
+        type="button"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
     </div>
     <a class="text-sm text-black transition duration-300 hover:text-primary" href="/#features">Features</a>
     <a href="/pricing" class="text-sm text-black transition duration-300 hover:text-primary relative">Pricing</a>
@@ -78,9 +77,9 @@
       <span class="bg-blue-500 ms-1 text-white text-[10px] px-2 py-1 rounded-full hidden-mobile-join lg:inline">JOIN</span>
     </a>
     <a href="/faq" class="text-sm text-black transition duration-300 hover:text-primary relative">FAQ</a>
-    <div class="mobile-auth-links flex-col w-full gap-0 inline-flex items-stretch list-none py-px">
-      <a href="/waitlist" class="text-sm text-black transition duration-300 hover:text-primary w-full text-left px-0 py-3 flex items-center justify-center transition px-4 py-2 rounded-md bg-primary-light text-white hover:bg-primary text-xs font-medium h-8 mb-0 mr-2 w-auto">Sign up</a>
-      <a href="#" tabindex="-1" aria-disabled="true" class="text-sm text-black/40 cursor-not-allowed opacity-60 w-full text-left px-0 py-3 bg-base-50 text-base-700 hover:bg-base-50 focus:ring-0 focus:outline-none h-8 px-4 py-2 text-xs font-medium rounded-md w-auto select-none" onclick="return false;">Log in</a>
+    <div class="mobile-auth-links flex-col w-full gap-0 inline-flex items-center list-none py-px">
+      <a href="/waitlist" class="text-sm text-black transition duration-300 hover:text-primary px-4 py-2 rounded-md bg-primary-light text-white hover:bg-primary text-xs font-medium h-8 mb-0 mr-2 w-auto text-center">Sign up</a>
+      <a href="#" tabindex="-1" aria-disabled="true" class="text-sm text-black/40 cursor-not-allowed opacity-60 px-4 py-2 bg-base-50 text-base-700 hover:bg-base-50 focus:ring-0 focus:outline-none h-8 text-xs font-medium rounded-md w-auto select-none text-center" onclick="return false;">Log in</a>
     </div>
   </nav>
   <script is:inline type="text/javascript">
@@ -158,13 +157,17 @@
   </script>
   <style>
     @media (max-width: 1023px) {
+      /* Remove old mobile logo container spacing */
+      header > div.flex.flex-col.items-center.justify-center {
+        display: none !important;
+      }
+      /* Adjust mobile hamburger for new row layout */
       .mobile-hamburger-fixed {
-        display: flex !important;
-        position: fixed !important;
-        top: 1rem !important;
-        left: 1rem !important;
-        background: #fff !important;
-        border-radius: 12px !important;
+        position: static !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        top: auto !important;
+        left: auto !important;
         box-shadow: 0 4px 12px rgba(0,0,0,0.10) !important;
         padding: 12px !important;
         z-index: 3000 !important;
@@ -173,21 +176,33 @@
         justify-content: center !important;
         width: 48px !important;
         height: 48px !important;
+        background: #fff !important;
+      }
+      /* Drawer header row */
+      #main-navigation > .flex.flex-row.items-center.justify-between {
+        margin-bottom: 0.5rem !important;
+      }
+      /* Hide old drawer logo */
+      .mobile-drawer-logo {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        margin-bottom: 0 !important;
+      }
+      /* Remove old close button absolute positioning */
+      #mobile-menu-close {
+        position: static !important;
+        margin-left: 1rem !important;
+      }
+      /* Remove extra top space in nav drawer */
+      #main-navigation.nav-mobile-drawer {
+        padding-top: 0 !important;
       }
       .topbar-mobile-hide {
         display: none !important;
       }
       .logo-title-desktop {
         display: none !important;
-      }
-      .mobile-drawer-logo {
-        display: none !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
-        margin-bottom: 0.5rem !important;
-      }
-      #main-navigation.nav-mobile-drawer .mobile-drawer-logo {
-        display: flex !important;
       }
       .mobile-hamburger {
         position: absolute !important;
@@ -220,7 +235,7 @@
         display: flex;
         flex-direction: column;
         padding: 0 1.5rem 1rem 1.5rem;
-        align-items: flex-start !important;
+        align-items: center !important;
         gap: 0.5rem;
         min-height: 100vh;
         height: 100vh;
