@@ -57,15 +57,15 @@
           class="text-sm text-black transition duration-300 hover:text-primary relative">
           FAQ
         </a>
-        <div class="inline-flex items-center gap-2 list-none py-px lg:ml-auto">
+        <div class="mobile-auth-links flex-col w-full gap-0 lg:flex-row lg:gap-2 inline-flex items-stretch list-none py-px lg:ml-auto">
           <a
             href="/waitlist"
-            class="flex items-center justify-center transition px-4 py-2 w-full sm:w-auto rounded-md bg-primary-light text-white hover:bg-primary text-xs font-medium h-8">
+            class="text-sm text-black transition duration-300 hover:text-primary w-full text-left px-0 py-3 lg:bg-primary-light lg:text-white lg:hover:bg-primary lg:rounded-md lg:px-4 lg:py-2 lg:text-xs lg:font-medium lg:h-8 lg:w-auto">
             Sign up
           </a>
           <a
             href="/login"
-            class="flex items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none text-base-700 bg-base-50 hover:bg-white focus:ring-base-500/50 h-8 px-4 py-2 text-xs font-medium rounded-md">
+            class="text-sm text-black transition duration-300 hover:text-primary w-full text-left px-0 py-3 lg:bg-base-50 lg:text-base-700 lg:hover:bg-white lg:focus:ring-2 lg:focus:outline-none lg:focus:ring-base-500/50 lg:h-8 lg:px-4 lg:py-2 lg:text-xs lg:font-medium lg:rounded-md lg:w-auto">
             Log in
           </a>
         </div>
@@ -85,14 +85,62 @@
         menuToggle.setAttribute('aria-expanded', open.toString());
         if (window.innerWidth < 1024) {
           if (open) {
-            nav.style.height = nav.scrollHeight + 'px';
+            nav.style.transform = 'translateX(0)';
+            nav.style.height = '100vh';
+            nav.style.width = '80vw';
+            nav.style.maxWidth = '320px';
+            nav.style.position = 'fixed';
+            nav.style.top = '0';
+            nav.style.left = '0';
+            nav.style.background = '#fff';
+            nav.style.boxShadow = '2px 0 24px rgba(60,90,130,0.08)';
+            nav.style.zIndex = '2002';
+            nav.style.transition = 'transform 0.3s cubic-bezier(0.4,0,0.2,1)';
+            nav.style.overflowY = 'auto';
+            nav.style.display = 'flex';
+            nav.style.flexDirection = 'column';
+            nav.style.padding = '2rem 1.5rem 1.5rem 1.5rem';
+            nav.style.gap = '0.5rem';
+            document.body.style.overflow = 'hidden';
             menuIconPath.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // X icon
           } else {
-            nav.style.height = '0';
+            nav.style.transform = 'translateX(-120%)';
+            nav.style.height = '';
+            nav.style.width = '';
+            nav.style.maxWidth = '';
+            nav.style.position = '';
+            nav.style.top = '';
+            nav.style.left = '';
+            nav.style.background = '';
+            nav.style.boxShadow = '';
+            nav.style.zIndex = '';
+            nav.style.transition = '';
+            nav.style.overflowY = '';
+            nav.style.display = '';
+            nav.style.flexDirection = '';
+            nav.style.padding = '';
+            nav.style.gap = '';
+            document.body.style.overflow = '';
             menuIconPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'); // Hamburger
           }
         } else {
           nav.style.height = '';
+          nav.style.transform = '';
+          nav.style.width = '';
+          nav.style.maxWidth = '';
+          nav.style.position = '';
+          nav.style.top = '';
+          nav.style.left = '';
+          nav.style.background = '';
+          nav.style.boxShadow = '';
+          nav.style.zIndex = '';
+          nav.style.transition = '';
+          nav.style.overflowY = '';
+          nav.style.display = '';
+          nav.style.flexDirection = '';
+          nav.style.padding = '';
+          nav.style.gap = '';
+          document.body.style.overflow = '';
           menuIconPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'); // Hamburger
         }
       }
@@ -130,4 +178,47 @@
       }
     })();
   </script>
+  <style>
+    @media (max-width: 1023px) {
+      #main-navigation {
+        transform: translateX(-120%);
+        transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+        width: 80vw;
+        max-width: 320px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #fff;
+        box-shadow: 2px 0 24px rgba(60,90,130,0.08);
+        z-index: 2002;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 1.5rem 1.5rem 1.5rem;
+        gap: 0.5rem;
+        height: 100vh;
+        min-height: 100vh;
+        max-height: 100vh;
+      }
+      .mobile-auth-links {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 0 !important;
+        align-items: stretch !important;
+      }
+      .mobile-auth-links a {
+        width: 100% !important;
+        text-align: left !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        background: none !important;
+        color: #121212 !important;
+        font-weight: 500 !important;
+        font-size: 1rem !important;
+        box-shadow: none !important;
+        height: auto !important;
+      }
+    }
+  </style>
 </header>

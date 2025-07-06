@@ -179,7 +179,7 @@ const TraumaChatDemo = () => {
           cursor: 'pointer',
           boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
         }}
-        className="mobile-menu-btn"
+        className="mobile-menu-btn demo-sidebar-toggle"
         aria-label="Open sidebar"
         aria-expanded={showMobileNav}
       >
@@ -225,7 +225,7 @@ const TraumaChatDemo = () => {
           transition: 'width 0.3s ease, transform 0.3s ease',
           flexShrink: 0
         }} 
-        className={`nav-sidebar${showMobileNav ? ' nav-sidebar-open' : ''}`}
+        className={`nav-sidebar demo-sidebar` + (showMobileNav ? ' nav-sidebar-open' : '')}
       >
         {/* Header */}
         <div style={{ 
@@ -619,29 +619,9 @@ const TraumaChatDemo = () => {
           }
         }
         @media (max-width: 768px) {
-          .mobile-menu-btn {
-            display: block !important;
-          }
-          .nav-sidebar {
-            position: fixed !important;
-            top: 0;
-            left: 0;
-            width: 100vw !important;
-            max-width: 100vw !important;
-            height: auto !important;
-            min-height: 0 !important;
-            z-index: 2001;
-            transform: translateY(-120%) !important;
-            transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
-            box-shadow: 0 8px 32px rgba(60,90,130,0.08);
-            border-right: none;
-            border-bottom: 1px solid rgba(219,230,243,0.6);
-            flex-direction: column !important;
-            padding-top: 1rem !important;
-            padding-bottom: 1rem !important;
-          }
-          .nav-sidebar.nav-sidebar-open {
-            transform: translateY(0) !important;
+          .demo-sidebar,
+          .demo-sidebar-toggle {
+            display: none !important;
           }
           .main-chat-area {
             min-width: 0 !important;
