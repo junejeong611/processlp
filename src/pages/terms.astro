@@ -31,10 +31,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <li>No refunds are provided for partial subscription periods</li>
       </ul>
       
-      <h2>Important Disclaimer</h2>
-      <p>Process is not a substitute for professional medical or mental health treatment. The App is designed as a complementary tool to support emotional wellness and is not intended to diagnose, treat, cure, or prevent any mental health condition.</p>
       
-      <p class="text-black"><strong>IMPORTANT</strong> This app is for emotional support and self-reflection only. If you are experiencing severe mental health symptoms, please seek professional help from a licensed therapist, counselor, or mental health professional.</p>
       
       <h2>Emergency Situations</h2>
       <p>If you are experiencing a mental health emergency or having thoughts of self-harm or suicide, please:</p>
@@ -98,8 +95,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <h2>Severability</h2>
       <p>If any provision of these terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</p>
       
-      <h2>Entire Agreement</h2>
-      <p>These terms constitute the entire agreement between you and Process regarding your use of the App.</p>
-    </article>
-  </section>
-</BaseLayout>
+             <h2>Entire Agreement</h2>
+       <p>These terms constitute the entire agreement between you and Process regarding your use of the App.</p>
+       
+       <div class="bg-red-50 border-l-4 border-red-400 p-6 rounded-lg mb-6">
+         <div class="flex items-start">
+           <div class="flex-shrink-0">
+             <svg class="h-6 w-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+             </svg>
+           </div>
+           <div class="ml-3">
+                         <h3 class="text-lg font-semibold text-black">Important Disclaimer</h3>
+            <p class="text-black mt-2">
+              Process is not a substitute for professional medical or mental health treatment. The App is designed as a complementary tool to support emotional wellness and is not intended to diagnose, treat, cure, or prevent any mental health condition.
+            </p>
+            <p class="text-black mt-2">
+              <strong>IMPORTANT:</strong> This app is for emotional support and self-reflection only. If you are experiencing severe mental health symptoms, please seek professional help from a licensed therapist, counselor, or mental health professional.
+            </p>
+           </div>
+         </div>
+       </div>
+     </article>
+   </section>
+ </BaseLayout>
