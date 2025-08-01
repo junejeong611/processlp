@@ -1,3 +1,5 @@
+// WAITLIST API DISABLED - No longer needed as users can sign up directly
+/*
 import mailjet from 'node-mailjet';
 
 export const prerender = false;
@@ -42,4 +44,16 @@ export async function POST({ request }) {
       }
     );
   }
+}
+*/
+
+// Return a redirect response to the sign up page
+export async function POST({ request }) {
+  return new Response(JSON.stringify({ 
+    success: false, 
+    error: 'Waitlist is no longer available. Please sign up directly at https://app.processit.app/register' 
+  }), {
+    status: 410, // Gone
+    headers: { 'Content-Type': 'application/json' },
+  });
 } 

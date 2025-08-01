@@ -20,7 +20,7 @@ const policyLinks = [
         </a>
         <p class="mt-4 text-sm text-text-muted">
           Real-time emotional support for complex trauma survivors. 
-          Process emotions safely with AI-powered guidance.
+          Process emotions safely with trauma-informed guidance.
         </p>
       </div>
 
@@ -89,20 +89,9 @@ document.addEventListener('DOMContentLoaded', function () {
       messageDiv.textContent = '';
       submitBtn.disabled = true;
       try {
-        const response = await fetch('/api/waitlist', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: emailInput.value })
-        });
-        const data = await response.json();
-        if (data.success) {
-          messageDiv.textContent = 'Thank you for subscribing! You\'ll receive updates from us soon.';
-          messageDiv.className = 'mt-2 text-sm text-green-600';
-          form.reset();
-        } else {
-          messageDiv.textContent = data.error || 'Something went wrong. Please try again.';
-          messageDiv.className = 'mt-2 text-sm text-red-600';
-        }
+        // Newsletter subscription disabled - redirecting to sign up
+        messageDiv.textContent = 'Newsletter signup is currently disabled. Please sign up at https://app.processit.app/register to stay updated.';
+        messageDiv.className = 'mt-2 text-sm text-blue-600';
       } catch (err) {
         messageDiv.textContent = 'Network error. Please check your connection and try again.';
         messageDiv.className = 'mt-2 text-sm text-red-600';

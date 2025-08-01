@@ -1,17 +1,238 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
 ---
 
 <BaseLayout>
   <section class="mx-auto w-full max-w-4xl px-4 py-12">
     <article class="prose prose-base">
       <h1>Privacy Policy</h1>
-      <p><strong>Last updated: July 2, 2025</strong></p>
+      <p><strong>Last updated: January 2025</strong></p>
+      
       <h2>Introduction</h2>
       <p>At Process, your privacy and emotional safety are our highest priorities. This Privacy Policy explains how we collect, use, protect, and handle your personal information when you use our trauma-informed AI wellness application.</p>
       <p><strong>We understand the sensitive nature of trauma and emotional processing. Your trust is sacred to us, and we are committed to transparency about our data practices.</strong></p>
-      <!-- (rest of the privacy policy content as previously provided) -->
+      
+      <h2>Information We Collect</h2>
+      
+      <h3>Personal Information</h3>
+      <ul>
+        <li><strong>Account Data:</strong> Email address, first name, last name (encrypted in database)</li>
+        <li><strong>Authentication:</strong> Password (hashed), multi-factor authentication codes, refresh tokens</li>
+        <li><strong>Subscription Data:</strong> Stripe customer ID, subscription status, payment information</li>
+      </ul>
+      
+      <h3>Usage and Conversation Data</h3>
+      <ul>
+        <li><strong>Chat Conversations:</strong> All messages, conversation history, and emotional content (encrypted)</li>
+        <li><strong>Usage Analytics:</strong> Session events, user engagement metrics</li>
+        <li><strong>Technical Data:</strong> IP addresses, device information, login timestamps, geographic location</li>
+      </ul>
+      
+      <h3>What We Do NOT Collect</h3>
+      <ul>
+        <li>Explicit age verification data</li>
+        <li>Sensitive health diagnoses or medical records</li>
+        <li>Third-party tracking beyond essential services</li>
+      </ul>
+      
+      <h2>How We Use Your Information</h2>
+      
+      <h3>Primary Uses</h3>
+      <ul>
+        <li><strong>Service Provision:</strong> To provide emotional support and trauma-informed conversations</li>
+        <li><strong>Account Management:</strong> To create and maintain your account, process payments</li>
+        <li><strong>AI Processing:</strong> To enable Claude AI to provide personalized emotional support</li>
+        <li><strong>Communication:</strong> To send important notifications and support emails</li>
+      </ul>
+      
+      <h3>Analytics and Improvement</h3>
+      <ul>
+        <li>To improve our AI responses and emotional support capabilities</li>
+        <li>To analyze usage patterns and enhance user experience</li>
+        <li>To ensure system security and prevent abuse</li>
+      </ul>
+      
+      <h2>Third-Party Services</h2>
+      
+      <h3>Essential Services</h3>
+      <ul>
+        <li><strong>Stripe:</strong> Payment processing and subscription management</li>
+        <li><strong>Mailjet:</strong> Email delivery for notifications and support</li>
+        <li><strong>Claude AI (Anthropic):</strong> AI processing for emotional support conversations</li>
+        <li><strong>AWS:</strong> Backend infrastructure and data storage (US East 1 region)</li>
+        <li><strong>MongoDB:</strong> Database storage</li>
+        <li><strong>ElevenLabs:</strong> Voice synthesis (if voice features are enabled)</li>
+      </ul>
+      
+      <h3>Data Sharing with Third Parties</h3>
+      <p>We only share your data with third parties in these specific circumstances:</p>
+      <ul>
+        <li><strong>Service Providers:</strong> To process payments, send emails, and provide AI services</li>
+        <li><strong>Legal Requirements:</strong> When required by law or to protect our rights</li>
+        <li><strong>Emergency Situations:</strong> In crisis situations where professional help is needed</li>
+      </ul>
+      
+      <p><strong>We do NOT share your data with:</strong></p>
+      <ul>
+        <li>Third-party analytics services</li>
+        <li>Advertising networks</li>
+        <li>Social media platforms</li>
+        <li>Unauthorized third parties</li>
+      </ul>
+      
+      <h2>Data Storage and Security</h2>
+      
+      <h3>Storage Location</h3>
+      <ul>
+        <li><strong>Primary Storage:</strong> AWS US East 1 region (United States)</li>
+        <li><strong>Database:</strong> MongoDB hosted on AWS infrastructure</li>
+        <li><strong>Backup:</strong> AWS infrastructure with standard redundancy</li>
+      </ul>
+      
+      <h3>Security Measures</h3>
+      <ul>
+        <li><strong>Encryption at Rest:</strong> All sensitive data encrypted using industry-standard encryption</li>
+        <li><strong>Encryption in Transit:</strong> HTTPS/TLS for all communications</li>
+        <li><strong>Password Security:</strong> Bcrypt hashing with salt factor of 10</li>
+        <li><strong>Authentication:</strong> JWT tokens, multi-factor authentication, rate limiting</li>
+        <li><strong>Infrastructure:</strong> AWS security groups, IAM roles, audit logging</li>
+      </ul>
+      
+      <h2>Data Retention</h2>
+      
+      <h3>Message Data</h3>
+      <ul>
+        <li><strong>Automatic Deletion:</strong> Messages are automatically deleted after 365 days</li>
+        <li><strong>Manual Deletion:</strong> Users can delete their account and all data immediately</li>
+        <li><strong>TTL Indexes:</strong> MongoDB Time To Live indexes ensure automatic cleanup</li>
+      </ul>
+      
+      <h3>Account Data</h3>
+      <ul>
+        <li><strong>Account Persistence:</strong> User accounts remain until manually deleted</li>
+        <li><strong>Token Expiration:</strong> Refresh tokens expire after 7 days</li>
+        <li><strong>Audit Logs:</strong> Maintained for security purposes</li>
+      </ul>
+      
+      <h2>Your Rights and Choices</h2>
+      
+      <h3>Your Rights</h3>
+      <ul>
+        <li><strong>Access:</strong> View your profile and chat history</li>
+        <li><strong>Deletion:</strong> Complete account deletion with removal of all data</li>
+        <li><strong>Portability:</strong> Export your chat history</li>
+        <li><strong>Correction:</strong> Update your profile information</li>
+        <li><strong>Withdrawal:</strong> Cancel subscriptions and delete accounts</li>
+      </ul>
+      
+      <h3>How to Exercise Your Rights</h3>
+      <ul>
+        <li>Access your data through your account settings</li>
+        <li>Delete your account through the account deletion feature</li>
+        <li>Contact us at team@processit.app for assistance</li>
+      </ul>
+      
+      <h2>AI and Machine Learning</h2>
+      
+      <h3>Claude AI Processing</h3>
+      <ul>
+        <li><strong>Real-time Processing:</strong> Chat messages are processed by Claude AI for emotional support</li>
+        <li><strong>No Training Data:</strong> Conversations are not used to train AI models</li>
+        <li><strong>Secure Transmission:</strong> Messages are encrypted before sending to AI services</li>
+        <li><strong>Privacy Protection:</strong> No personal identifiers are shared with AI services</li>
+      </ul>
+      
+      <h3>Safety Protocols</h3>
+      <ul>
+        <li><strong>Crisis Detection:</strong> AI recognizes crisis indicators and provides appropriate responses</li>
+        <li><strong>Grounding Techniques:</strong> Built-in safety protocols for overwhelming emotions</li>
+        <li><strong>Professional Resources:</strong> Direct users to crisis hotlines when needed</li>
+      </ul>
+      
+      <h2>Crisis and Emergency Situations</h2>
+      
+      <h3>Crisis Recognition</h3>
+      <p>Our AI system is trained to recognize crisis indicators including:</p>
+      <ul>
+        <li>Self-harm mentions or intentions</li>
+        <li>Dissociation or overwhelming emotions</li>
+        <li>Suicidal thoughts or ideation</li>
+        <li>Severe emotional distress</li>
+      </ul>
+      
+      <h3>Crisis Response</h3>
+      <ul>
+        <li><strong>Immediate Response:</strong> AI provides grounding techniques and safety checks</li>
+        <li><strong>Escalation:</strong> Users are directed to professional crisis resources</li>
+        <li><strong>Resources Provided:</strong> Crisis hotlines and professional mental health services</li>
+      </ul>
+      
+      <h3>Available Crisis Resources</h3>
+      <ul>
+        <li><strong>National Suicide Prevention Lifeline:</strong> 1-800-273-8255</li>
+        <li><strong>Crisis Text Line:</strong> Text HOME to 741741</li>
+        <li><strong>SAMHSA National Helpline:</strong> 1-800-662-HELP</li>
+        <li><strong>Trevor Project:</strong> For LGBTQ+ youth</li>
+        <li><strong>Trans Lifeline:</strong> For transgender support</li>
+      </ul>
+      
+      <h2>Age Restrictions and Youth Protection</h2>
+      
+      <h3>Age Requirements</h3>
+      <ul>
+        <li><strong>Minimum Age:</strong> 16 years old</li>
+        <li><strong>Parental Consent:</strong> Recommended for users under 18 years old</li>
+        <li><strong>Professional Disclaimer:</strong> This service is not a substitute for professional mental health care</li>
+      </ul>
+      
+      <h3>Youth Safety</h3>
+      <ul>
+        <li>Enhanced safety protocols for younger users</li>
+        <li>Clear disclaimers about professional mental health care</li>
+        <li>Parental guidance recommendations for users under 18</li>
+      </ul>
+      
+      <h2>Changes to This Privacy Policy</h2>
+      <p>We may update this Privacy Policy from time to time. We will notify you of any changes by:</p>
+      <ul>
+        <li>Posting the new Privacy Policy on this page</li>
+        <li>Sending you an email notification</li>
+        <li>Updating the "Last updated" date at the top of this policy</li>
+      </ul>
+      
+      <h2>Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
+      <ul>
+        <li><strong>Email:</strong> team@processit.app</li>
+        <li><strong>Response Time:</strong> We aim to respond to privacy inquiries within 48 hours</li>
+      </ul>
+      
+      <h2>Legal Basis and Compliance</h2>
+      <p>This Privacy Policy complies with applicable data protection laws including:</p>
+      <ul>
+        <li>General Data Protection Regulation (GDPR)</li>
+        <li>California Consumer Privacy Act (CCPA)</li>
+        <li>Children's Online Privacy Protection Act (COPPA)</li>
+        <li>Health Insurance Portability and Accountability Act (HIPAA) considerations</li>
+      </ul>
+      
+      <h2>Important Disclaimers</h2>
+      <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-6">
+        <div class="flex">
+          <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div class="ml-3">
+            <p class="text-sm text-yellow-700">
+              <strong>Mental Health Disclaimer:</strong> Process is not a substitute for professional mental health care. If you are experiencing a mental health crisis, please contact emergency services or a mental health professional immediately.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <p><strong>Last updated: January 2025</strong></p>
     </article>
   </section>
 </BaseLayout>

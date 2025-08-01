@@ -1,12 +1,38 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
+
+<!-- WAITLIST PAGE DISABLED - Redirecting to sign up page -->
 <BaseLayout>
   <section class="bg-white pt-20 text-text-primary">
     <div class="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
       <div class="text-center mb-16 flex flex-col items-center">
         <div class="mb-6">
-          <!-- Illustration/Icon -->
+          <img src="/logo.svg" alt="Process Logo" class="w-20 h-20 mx-auto" />
+        </div>
+        <h2 class="text-xl leading-tight tracking-tight sm:text-2xl md:text-3xl capitalize lg:text-4xl mt-4 font-semibold lg:text-balance text-text-primary">
+          Join Process Today
+        </h2>
+        <p class="text-base leading-normal mt-4 font-medium max-w-2xl mx-auto text-text-secondary">
+          Process is now available! Sign up to start your healing journey with trauma-informed support.
+        </p>
+        <div class="mt-8">
+          <a href="https://app.processit.app/register" class="inline-flex items-center justify-center transition bg-primary-light text-white hover:bg-primary h-12 px-8 py-3 text-base font-medium rounded-lg">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<!-- Original waitlist page content commented out below -->
+<!--
+<BaseLayout>
+  <section class="bg-white pt-20 text-text-primary">
+    <div class="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+      <div class="text-center mb-16 flex flex-col items-center">
+        <div class="mb-6">
           <img src="/logo.svg" alt="Process Logo" class="w-20 h-20 mx-auto" />
         </div>
         <h2
@@ -18,9 +44,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </p>
       </div>
 
-      <!-- What to Expect Section -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative gap-8 lg:gap-12 max-lg:divide-y lg:divide-x divide-blue-200 divide-dashed mb-16">
-        <!-- Early Access -->
         <div class="relative z-10 bg-white text-center md:text-left pt-6 md:pe-10 lg:py-0 pb-10 last:pb-0 last:pe-0">
           <div class="w-12 h-12 rounded-full text-white font-bold flex items-center justify-center mx-auto md:mx-0 mb-6 bg-primary">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -34,7 +58,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             Be among the first to experience trauma-informed AI support designed specifically for complex trauma survivors.
           </p>
         </div>
-        <!-- Special Pricing -->
         <div class="relative z-10 bg-white text-center md:text-left pt-6 md:pe-10 lg:py-0 pb-10 last:pb-0 last:pe-0">
           <div class="w-12 h-12 rounded-full text-white font-bold flex items-center justify-center mx-auto md:mx-0 mb-6 bg-secondary">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -48,7 +71,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             Exclusive launch pricing for waitlist members. Get premium features at a fraction of the regular cost.
           </p>
         </div>
-        <!-- Shape the Future -->
         <div class="relative z-10 bg-white text-center md:text-left pt-6 md:pe-10 lg:py-0 pb-10 last:pb-0 last:pe-0">
           <div class="w-12 h-12 rounded-full text-white font-bold flex items-center justify-center mx-auto md:mx-0 mb-6 bg-accent">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,7 +86,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
       </div>
 
-      <!-- Waitlist Form (wider) -->
       <div class="max-w-2xl w-full mx-auto mb-16">
         <div id="waitlist-form-container">
           <div class="p-6 rounded-lg bg-bg-secondary">
@@ -74,7 +95,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <p class="text-base mb-4 text-text-secondary">
               Get early access and be notified when Process launches. Your spot is reserved.
             </p>
-            <!-- Error Message -->
             <div id="waitlist-error" class="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg hidden">
               <p class="text-sm text-red-600"></p>
             </div>
@@ -172,3 +192,4 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     });
   </script>
 </BaseLayout>
+-->
