@@ -1,271 +1,202 @@
---- 
+---
 import BaseLayout from "../layouts/BaseLayout.astro";
----    
+---
 
-<BaseLayout>    
-  <!-- FAQ content moved from Faq.astro component -->   
-  <section>     
-    <div class="px-8 py-32 mx-auto md:px-12 lg:px-24 max-w-7xl">       
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-12">         
-        <div class="text-center lg:text-left">           
-          <p class="text-xl leading-tight tracking-tight sm:text-2xl md:text-3xl capitalize lg:text-4xl font-semibold lg:text-balance" style="color: var(--color-text-primary)">
-            Frequently Asked Questions
-          </p>           
-          <p class="text-base leading-normal mt-4 font-medium" style="color: var(--color-text-secondary)">
-            Everything you need to know about Process and trauma-informed AI support
-          </p>         
-        </div>         
-        <div class="relative w-full mx-auto font-normal lg:col-span-2">           
-          
-          <!-- What is Process? -->
-          <div class="w-full mx-auto border-b border-gray-200 faq-item">
-            <button class="flex items-center justify-between w-full px-0 py-6 text-left faq-question" data-faq="item-1">
-              <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
-                What is Process and how is it different from other mental health apps?
-              </span>
-              <span class="text-2xl faq-plus" style="color: var(--color-primary)">+</span>
-              <span class="text-2xl faq-minus" style="color: var(--color-primary); display: none;">−</span>
-            </button>
-            <div class="faq-answer pb-6" data-faq="item-1" style="display: none; color: var(--color-text-secondary)">
-              <p class="text-base leading-relaxed">
-                Made by and for people living with complex trauma, Process is an AI tool trained on trauma-informed principles and established emotional processing approaches. Unlike generic mental health apps that focus on general anxiety or depression, we address the emotional dysregulation and other challenges specific to complex trauma. Our AI guides you in understanding how you feel, and giving yourself the unconditional love and care you need, responding with trauma-informed support rather than generic "just breathe" advice.
-              </p>
-            </div>
-          </div>
+<BaseLayout>
+  <div class="max-w-4xl mx-auto px-8 md:px-12 lg:px-24 py-16">
+    <div class="text-center mb-16">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h1>
+      <p class="text-lg text-gray-600">
+        Everything you need to know about Process and trauma-informed AI learning tools
+      </p>
+    </div>
 
-          <!-- Is this therapy? -->
-          <div class="w-full mx-auto border-b border-gray-200 faq-item">
-            <button class="flex items-center justify-between w-full px-0 py-6 text-left faq-question" data-faq="item-2">
-              <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
-                Is Process a replacement for therapy?
-              </span>
-              <span class="text-2xl faq-plus" style="color: var(--color-primary)">+</span>
-              <span class="text-2xl faq-minus" style="color: var(--color-primary); display: none;">−</span>
-            </button>
-            <div class="faq-answer pb-6" data-faq="item-2" style="display: none; color: var(--color-text-secondary)">
-              <p class="text-base leading-relaxed mb-4">
-                No, Process is not a replacement for professional therapy. We're designed as a supportive tool that can-
-              </p>
-              <ul class="list-disc pl-6 space-y-2 text-base">
-                <li class="flex items-center gap-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="size-5 flex-shrink-0" style="color: var(--color-accent)">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M5 12l5 5l10 -10"></path>
-                  </svg>
-                  <span class="text-base leading-relaxed">
-                    <strong>Support the majority of complex trauma survivors who don't have access to trauma-informed resources</strong>
-                  </span>
-                </li>
-                <li>Think of us as a supportive friend who understands complex trauma and can help you process emotions safely at your own pace.</li>
-              </ul>
-            </div>
-          </div>
+    <div class="space-y-12">
+      <!-- What is Process? -->
+      <div class="border-b border-gray-200 pb-8">
+        <h2 class="text-2xl font-semibold mb-4">
+          What is Process and how is it different from other mental health apps?
+        </h2>
+        <div class="prose prose-lg">
+          <p class="mb-4">
+            Made by and for people living with complex trauma, Process is an AI tool trained on trauma-informed principles and established educational approaches. Unlike generic mental health apps that focus on general anxiety or depression, we address the emotional dysregulation and other challenges specific to complex trauma. Our AI guides you in understanding how you feel, and giving yourself the unconditional love and care you need, responding with trauma-informed education rather than generic "just breathe" advice.
+          </p>
+        </div>
+      </div>
 
-          <!-- Safety and Crisis -->
-          <div class="w-full mx-auto border-b border-gray-200 faq-item">
-            <button class="flex items-center justify-between w-full px-0 py-6 text-left faq-question" data-faq="item-3">
-              <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
-                What if I'm in crisis or having thoughts of self-harm?
-              </span>
-              <span class="text-2xl faq-plus" style="color: var(--color-primary)">+</span>
-              <span class="text-2xl faq-minus" style="color: var(--color-primary); display: none;">−</span>
-            </button>
-            <div class="faq-answer pb-6" data-faq="item-3" style="display: none; color: var(--color-text-secondary)">
-              <p class="text-base leading-relaxed mb-4">
-                Process is not equipped for crisis intervention. If you're experiencing thoughts of self-harm or suicide, please reach out for immediate help:
-              </p>
-              <ul class="list-disc pl-6 space-y-2 text-base mb-4">
-                <li><strong>988 Suicide & Crisis Lifeline:</strong> Call or text 988</li>
-                <li><strong>Emergency Services:</strong> Call 911</li>
-                <li><strong>Crisis Text Line:</strong> Text HOME to 741741</li>
-                <li><strong>Your local emergency room</strong></li>
-              </ul>
-              <p class="text-base leading-relaxed">
-                Our AI can recognize crisis language and will provide these resources, but we cannot replace emergency mental health services. Your safety is the top priority.
-              </p>
-            </div>
-          </div>
+      <!-- Is this therapy? -->
+      <div class="border-b border-gray-200 pb-8">
+        <h2 class="text-2xl font-semibold mb-4">
+          Is Process a replacement for therapy?
+        </h2>
+        <div class="prose prose-lg">
+          <p class="mb-4">
+            No, Process is not a replacement for professional therapy. We're designed as an educational tool that can-
+          </p>
+          <ul class="list-disc pl-6 mb-4">
+            <li><strong>Complement your therapy:</strong> Use insights from Process to prepare for therapy sessions and continue learning between appointments</li>
+            <li><strong>Bridge gaps in care:</strong> Provide educational support when you can't access therapy or between sessions</li>
+            <li><strong>Support the majority of complex trauma survivors who don't have access to trauma-informed resources</strong></li>
+          </ul>
+          <p class="mb-4">
+            <strong>Think of us as an educational companion who understands complex trauma and can help you learn about your emotional patterns safely at your own pace.</strong>
+          </p>
+          <p class="mb-4">
+            We always encourage users to seek professional mental health care when possible. Process is designed to enhance your understanding and learning, not replace professional treatment.
+          </p>
+        </div>
+      </div>
 
-          <!-- Privacy and Security -->
-          <div class="w-full mx-auto border-b border-gray-200 faq-item">
-            <button class="flex items-center justify-between w-full px-0 py-6 text-left faq-question" data-faq="item-4">
-              <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
-                How do you protect my privacy and conversations?
-              </span>
-              <span class="text-2xl faq-plus" style="color: var(--color-primary)">+</span>
-              <span class="text-2xl faq-minus" style="color: var(--color-primary); display: none;">−</span>
-            </button>
-            <div class="faq-answer pb-6" data-faq="item-4" style="display: none; color: var(--color-text-secondary)">
-              <p class="text-base leading-relaxed mb-4">
-                Your privacy is sacred to us. We understand trauma survivors need absolute safety:
-              </p>
-              <ul class="list-disc pl-6 space-y-2 text-base mb-4">
-                <li><strong>Secure by design:</strong> Your conversations are protected using industry-standard encryption in transit and at rest on AWS.</li>
-                <li><strong>No selling data:</strong> We never sell your personal information to anyone.</li>
-                <li><strong>Private training:</strong> Your conversations are never used to train our AI.</li>
-                <li><strong>You control your data:</strong> Delete conversations or your entire account anytime.</li>
-                <li><strong>Minimal sharing:</strong> We only share data with essential service providers under strict privacy agreements.</li>
-              </ul>
-              <p class="text-base leading-relaxed">
-                We are committed to continually improving our security and plan to offer end-to-end encryption in the future. See our detailed Privacy Policy for complete information about how we protect your sensitive information.
-              </p>
-            </div>
-          </div>
+      <!-- Crisis Support -->
+      <div class="border-b border-gray-200 pb-8">
+        <h2 class="text-2xl font-semibold mb-4">
+          What if I'm in crisis?
+        </h2>
+        <div class="prose prose-lg">
+          <p class="mb-4">
+            Process is not equipped for crisis intervention. If you're experiencing thoughts of self-harm or suicide, please reach out for immediate help:
+          </p>
+          <ul class="list-disc pl-6 mb-4">
+            <li><strong>Emergency Services:</strong> 911</li>
+            <li><strong>National Suicide Prevention Lifeline:</strong> 988</li>
+            <li><strong>Crisis Text Line:</strong> Text HOME to 741741</li>
+            <li><strong>Your local emergency room or crisis center</strong></li>
+          </ul>
+          <p class="mb-4">
+            Our AI can recognize crisis language and will provide these resources, but we cannot replace emergency mental health services. Your safety is the top priority.
+          </p>
+        </div>
+      </div>
 
-          <!-- How AI Works -->
-          <div class="w-full mx-auto border-b border-gray-200 faq-item">
-            <button class="flex items-center justify-between w-full px-0 py-6 text-left faq-question" data-faq="item-5">
-              <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
-                How does your AI understand complex trauma?
-              </span>
-              <span class="text-2xl faq-plus" style="color: var(--color-primary)">+</span>
-              <span class="text-2xl faq-minus" style="color: var(--color-primary); display: none;">−</span>
-            </button>
-            <div class="faq-answer pb-6" data-faq="item-5" style="display: none; color: var(--color-text-secondary)">
-              <p class="text-base leading-relaxed mb-4">
-                Our AI is specifically designed to support people with complex trauma by:
-              </p>
-              <ul class="list-disc pl-6 space-y-2 text-base mb-4">
-                <li><strong>Trauma-informed frameworks:</strong> Built using trauma-informed principles and established emotional processing approaches, and developed through lived experience and research—including insights learned through our own support journeys.</li>
-                <li><strong>Recognizing underlying beliefs:</strong> Helps identify the core beliefs and patterns that often underlie complex trauma.</li>
-                <li><strong>Safety-first responses:</strong> Always prioritizes emotional regulation and your sense of safety before moving into deeper processing.</li>
-                <li><strong>Not just generic advice:</strong> This isn't a generic AI giving mindfulness tips—it's designed to truly understand the challenges of complex trauma and help you process emotions in a way that feels safe and supportive.</li>
-              </ul>
-            </div>
-          </div>
+      <!-- How does it work? -->
+      <div class="border-b border-gray-200 pb-8">
+        <h2 class="text-2xl font-semibold mb-4">
+          How does Process work?
+        </h2>
+        <div class="prose prose-lg">
+          <p class="mb-4">
+            Process uses advanced AI technology to provide trauma-informed educational conversations. Here's how it works:
+          </p>
+          <ul class="list-disc pl-6 mb-4">
+            <li><strong>Start a conversation:</strong> Share what you're experiencing through text or voice</li>
+            <li><strong>Get educational insights:</strong> Our AI responds with trauma-informed understanding and learning</li>
+            <li><strong>Build awareness:</strong> Learn about your patterns, triggers, and responses over time</li>
+            <li><strong>Continue learning:</strong> Use insights to enhance your understanding and personal growth</li>
+          </ul>
+        </div>
+      </div>
 
-          <!-- Pattern Recognition -->
-          <div class="w-full mx-auto border-b border-gray-200 faq-item">
-            <button class="flex items-center justify-between w-full px-0 py-6 text-left faq-question" data-faq="item-6">
-              <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
-                How does Process help me understand my patterns and triggers?
-              </span>
-              <span class="text-2xl faq-plus" style="color: var(--color-primary)">+</span>
-              <span class="text-2xl faq-minus" style="color: var(--color-primary); display: none;">−</span>
-            </button>
-            <div class="faq-answer pb-6" data-faq="item-6" style="display: none; color: var(--color-text-secondary)">
-              <p class="text-base leading-relaxed mb-4">
-                Through your conversations with our AI, Process helps you explore your experiences. **Advanced pattern recognition and insights are coming soon**, but for now you can discover:
-              </p>
-              
-              <p class="text-base leading-relaxed mb-2"><strong>Currently Available</strong></p>
-              <ul class="list-disc pl-6 space-y-2 text-base mb-4">
-                <li><strong>Emotional triggers:</strong> Situations, words, or experiences that activate trauma responses.</li>
-                <li><strong>Core beliefs:</strong> Deep-seated beliefs about yourself, others, and the world formed through trauma.</li>
-                <li><strong>Relationship dynamics:</strong> How trauma shows up in your connections with others.</li>
-                <li><strong>Reparenting:</strong> Helping you develop new, supportive self-talk and affirmations to nurture your inner child and promote healing.</li>
-              </ul>
-              
-              <p class="text-base leading-relaxed mb-2"><strong>Coming Soon</strong></p>
-              <ul class="list-disc pl-6 space-y-2 text-base mb-4">
-                <li><strong>New affirmations:</strong> Personalized affirmations tailored to your healing journey</li>
-                <li><strong>Growth and progress tracking:</strong> Visual tracking of your journey and celebrating the steps you take toward healing and self-understanding</li>
-                <li><strong>Advanced pattern recognition:</strong> Deeper analysis of your triggers, responses, and healing patterns</li>
-                <li><strong>Insights dashboard:</strong> Visual charts and analytics showing your progress over time</li>
-              </ul>
-              
-              <p class="text-base leading-relaxed">
-                These insights help you develop self-understanding, practice self-compassion, and make conscious choices about your responses, supporting your ongoing growth and understanding.
-              </p>
-            </div>
-          </div>
+      <!-- Trauma-Informed AI -->
+      <div class="border-b border-gray-200 pb-8">
+        <h2 class="text-2xl font-semibold mb-4">
+          How is your AI trauma-informed?
+        </h2>
+        <div class="prose prose-lg">
+          <p class="mb-4">
+            Our AI is specifically designed to support people with complex trauma by:
+          </p>
+          <ul class="list-disc pl-6 mb-4">
+            <li><strong>Trauma-informed frameworks:</strong> Built using trauma-informed principles and established educational approaches, and developed through lived experience and research—including insights learned through our own learning journeys.</li>
+            <li><strong>Safety-first approach:</strong> Always prioritizing your sense of safety before moving into deeper learning.</li>
+            <li><strong>Complex trauma understanding:</strong> Recognizing the unique challenges of complex trauma and help you learn about emotions in a way that feels safe and educational.</li>
+          </ul>
+        </div>
+      </div>
 
-          <!-- Pricing -->
-          <div class="w-full mx-auto border-b border-gray-200 faq-item">
-            <button class="flex items-center justify-between w-full px-0 py-6 text-left faq-question" data-faq="item-7">
-              <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
-                How much does Process cost?
-              </span>
-              <span class="text-2xl faq-plus" style="color: var(--color-primary)">+</span>
-              <span class="text-2xl faq-minus" style="color: var(--color-primary); display: none;">−</span>
-            </button>
-            <div class="faq-answer pb-6" data-faq="item-7" style="display: none; color: var(--color-text-secondary)">
-              <p class="text-base leading-relaxed mb-4">
-                We believe trauma support should be accessible, so we offer
-              </p>
-              <p class="text-base leading-relaxed mb-4">
-                <strong>During Beta, Currently Free</strong>
-              </p>
-              <ul class="list-disc pl-6 space-y-2 text-base mb-4">
-                <li><strong>All features are completely free</strong> for everyone during our beta phase</li>
-                <li>Text and voice conversations for emotional processing</li>
-                <li>Basic pattern recognition and reparenting support</li>
-                <li>Crisis resources and safety planning</li>
-                <li>Complete privacy and security</li>
-              </ul>
-              <p class="text-base leading-relaxed mb-4">
-                <strong>Future Pricing, After Beta</strong>
-              </p>
-              <ul class="list-disc pl-6 space-y-2 text-base mb-4">
-                <li><strong>Free tier:</strong> Text-based conversations for basic emotional processing</li>
-                <li><strong>Premium subscription ($9.99/month):</strong> Unlimited conversations, voice mode, and advanced pattern recognition</li>
-                <li>Features like priority access to our trauma specialist network and emotional skill learning are coming soon</li>
-              </ul>
-              <p class="text-base leading-relaxed mb-4">
-                We're committed to ensuring cost is never a barrier to accessing trauma-informed support. <strong>During beta, everything is free</strong> to help us gather feedback and improve the experience. Our free tier will provide meaningful support after launch, and premium features will enhance your healing journey.
-              </p>
-              <p class="text-base leading-relaxed mb-4">
-                <strong>Coming Soon</strong>
-              </p>
-              <ul class="list-disc pl-6 space-y-2 text-base">
-                <li>Build insights: Over time, experience healing, discover patterns, and develop self-regulation skills.</li>
-              </ul>
-            </div>
-          </div>
+      <!-- Pattern Recognition -->
+      <div class="border-b border-gray-200 pb-8">
+        <h2 class="text-2xl font-semibold mb-4">
+          How does Process help me understand my patterns and triggers?
+        </h2>
+        <div class="prose prose-lg">
+          <p class="mb-4">
+            Through your conversations with our AI, Process helps you explore your experiences. **Advanced pattern recognition and insights are coming soon**, but for now you can discover:
+          </p>
+          <ul class="list-disc pl-6 mb-4">
+            <li><strong>Trigger identification:</strong> Recognizing what situations or thoughts activate your trauma responses</li>
+            <li><strong>Response patterns:</strong> Understanding how you typically react to different triggers</li>
+            <li><strong>Core beliefs:</strong> Identifying underlying beliefs that influence your responses</li>
+            <li><strong>Self-compassion:</strong> Helping you develop new, supportive self-talk and affirmations to nurture your inner child and promote learning.</li>
+            <li><strong>Growth tracking:</strong> Monitoring your progress in understanding and managing your responses</li>
+            <li><strong>New affirmations:</strong> Personalized affirmations tailored to your learning journey</li>
+            <li><strong>Progress celebration:</strong> Acknowledging and celebrating the steps you take toward learning and self-understanding</li>
+            <li><strong>Advanced pattern recognition:</strong> Deeper analysis of your triggers, responses, and learning patterns</li>
+          </ul>
+          <p class="mb-4">
+            The goal is to help you develop greater self-awareness and make conscious choices about your responses, supporting your ongoing growth and understanding.
+          </p>
+        </div>
+      </div>
 
-          <!-- Who built this -->
-          <div class="w-full mx-auto border-b border-gray-200 faq-item">
-            <button class="flex items-center justify-between w-full px-0 py-6 text-left faq-question" data-faq="item-8">
-              <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
-                Who built Process and why should I trust it?
-              </span>
-              <span class="text-2xl faq-plus" style="color: var(--color-primary)">+</span>
-              <span class="text-2xl faq-minus" style="color: var(--color-primary); display: none;">−</span>
-            </button>
-            <div class="faq-answer pb-6" data-faq="item-8" style="display: none; color: var(--color-text-secondary)">
-              <p class="text-base leading-relaxed mb-4">
-                Process is built by trauma survivors, for trauma survivors, grounded in our own lived experience of trauma. We both worked in tech until we realized that supporting others on their healing journey is our true calling and passion. Our work is guided by advisors from the trauma therapy community, ensuring that everything we build is rooted in empathy, understanding, and real-world expertise.
-              </p>
-            </div>
-          </div>
+      <!-- Pricing -->
+      <div class="border-b border-gray-200 pb-8">
+        <h2 class="text-2xl font-semibold mb-4">
+          How much does Process cost?
+        </h2>
+        <div class="prose prose-lg">
+          <p class="mb-4">
+            We believe trauma-informed education should be accessible, so we offer
+          </p>
+          <ul class="list-disc pl-6 mb-4">
+            <li><strong>Free tier:</strong> Essential learning tools and basic conversations</li>
+            <li><strong>Premium tier:</strong> Advanced features and enhanced learning capabilities</li>
+            <li>Text and voice conversations for emotional learning</li>
+            <li>Basic pattern recognition and self-compassion learning</li>
+            <li>Trauma-informed educational frameworks</li>
+            <li>24/7 availability for learning</li>
+          </ul>
+          <p class="mb-4">
+            <strong>Free tier:</strong> Text-based conversations for basic emotional learning
+          </p>
+          <p class="mb-4">
+            We're committed to ensuring cost is never a barrier to accessing trauma-informed education. <strong>During beta, everything is free</strong> to help us gather feedback and improve the experience. Our free tier will provide meaningful learning after launch, and premium features will enhance your educational journey.
+          </p>
+          <p class="mb-4">
+            <strong>Premium features include:</strong>
+          </p>
+          <ul class="list-disc pl-6 mb-4">
+            <li>Voice conversations for hands-free learning</li>
+            <li>Extended conversation history for deeper insights</li>
+            <li>Advanced pattern recognition and analysis</li>
+            <li>Build insights: Over time, experience learning, discover patterns, and develop self-regulation skills.</li>
+          </ul>
+        </div>
+      </div>
 
-          <!-- Getting Started -->
-          <div class="w-full mx-auto faq-item">
-            <button class="flex items-center justify-between w-full px-0 py-6 text-left faq-question" data-faq="item-9">
-              <span class="text-lg font-semibold" style="color: var(--color-text-primary)">
-                How do I get started with Process?
-              </span>
-              <span class="text-2xl faq-plus" style="color: var(--color-primary)">+</span>
-              <span class="text-2xl faq-minus" style="color: var(--color-primary); display: none;">−</span>
-            </button>
-            <div class="faq-answer pb-6" data-faq="item-9" style="display: none; color: var(--color-text-secondary)">
-              <p class="text-base leading-relaxed mb-4">
-                Process is now available! You can sign up directly to start your healing journey.
-              </p>
-              <ol class="list-decimal pl-6 space-y-2 text-base mb-4">
-                <li><strong>Create your account:</strong> Just an email and password—no personal details required.</li>
-                <li><strong>Start a conversation:</strong> Share what's on your mind—there's no wrong way to begin.</li>
-                <li><strong>Explore at your pace:</strong> Use text (and voice, if available), process emotions, or learn about trauma.</li>
-                <li><strong>Build insights:</strong> Over time, experience healing, discover patterns, and develop self-regulation skills.</li>
-              </ol>
-              <p class="text-base leading-relaxed">
-                Remember: you're in complete control. Go as fast or slow as feels safe, and you can delete anything or stop anytime.
-              </p>
-            </div>
-          </div>
+      <!-- Trust -->
+      <div class="border-b border-gray-200 pb-8">
+        <h2 class="text-2xl font-semibold mb-4">
+          Who built Process and why should I trust it?
+        </h2>
+        <div class="prose prose-lg">
+          <p class="mb-4">
+            Process is built by trauma survivors, for trauma survivors, grounded in our own lived experience of trauma. We both worked in tech until we realized that supporting others on their learning journey is our true calling and passion. Our work is guided by advisors from the trauma therapy community, ensuring that everything we build is rooted in empathy, understanding, and real-world expertise.
+          </p>
+        </div>
+      </div>
 
-        </div>       
-      </div>       
-    </div>   
-  </section>  
+      <!-- Getting Started -->
+      <div class="border-b border-gray-200 pb-8">
+        <h2 class="text-2xl font-semibold mb-4">
+          How do I get started with Process?
+        </h2>
+        <div class="prose prose-lg">
+          <p class="mb-4">
+            Process is now available! You can sign up directly to start your learning journey.
+          </p>
+          <p class="mb-4">
+            <strong>Getting started is simple:</strong>
+          </p>
+          <ul class="list-disc pl-6 mb-4">
+            <li><strong>Sign up:</strong> Create your account at app.processit.app</li>
+            <li><strong>Start learning:</strong> Begin with a simple conversation about what you're experiencing</li>
+            <li><strong>Explore at your pace:</strong> Use text (and voice, if available), learn about emotions, or learn about trauma.</li>
+            <li><strong>Build insights:</strong> Over time, experience learning, discover patterns, and develop self-regulation skills.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </BaseLayout>
 
 <script>
