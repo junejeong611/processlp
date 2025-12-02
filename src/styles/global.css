@@ -58,24 +58,22 @@ body, header, main {
   padding: 0;
 }
 
-/* Lowercase all text by default */
-body {
-  text-transform: lowercase;
+/* Lowercase all text by default - including headings */
+* {
+  text-transform: lowercase !important;
+}
+
+/* Explicitly target headings to ensure lowercase */
+h1, h2, h3, h4, h5, h6 {
+  text-transform: lowercase !important;
 }
 
 /* Exceptions: Don't lowercase these elements */
-h1, h2, h3, h4, h5, h6,
-.capitalize,
 .uppercase,
 code, pre,
 input, textarea, button,
-[class*="font-"] {
-  text-transform: none;
-}
-
-/* Capitalize first letter of sentences and standalone 'I' */
-.capitalize-i::first-letter {
-  text-transform: capitalize;
+svg, img {
+  text-transform: none !important;
 }
 
 @media (min-width: 1024px) {

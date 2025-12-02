@@ -28,7 +28,8 @@ import Footer from "../components/global/Footer.astro";
               const parent = node.parentElement;
               if (!parent || parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE' || 
                   parent.tagName === 'CODE' || parent.tagName === 'PRE' ||
-                  parent.classList.contains('uppercase') || parent.classList.contains('capitalize')) {
+                  parent.tagName === 'SVG' || parent.tagName === 'IMG' ||
+                  parent.classList.contains('uppercase')) {
                 return NodeFilter.FILTER_REJECT;
               }
               return NodeFilter.FILTER_ACCEPT;
@@ -45,13 +46,13 @@ import Footer from "../components/global/Footer.astro";
         
         textNodes.forEach(textNode => {
           let text = textNode.textContent;
-          // Capitalize standalone 'I' and contractions (I'm, I've, I'll, I'd, I'm)
+          // Capitalize standalone 'I' and contractions (I'm, I've, I'll, I'd)
+          // Use word boundaries to avoid matching 'I' inside other words
           text = text.replace(/\bi\b/g, 'I');
           text = text.replace(/\bi'm\b/gi, "I'm");
           text = text.replace(/\bi've\b/gi, "I've");
           text = text.replace(/\bi'll\b/gi, "I'll");
           text = text.replace(/\bi'd\b/gi, "I'd");
-          text = text.replace(/\bi'm\b/gi, "I'm");
           if (text !== textNode.textContent) {
             textNode.textContent = text;
           }
