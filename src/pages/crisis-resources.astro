@@ -6,42 +6,33 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <div class="max-w-4xl mx-auto px-8 md:px-12 lg:px-24 py-16">
     
     <!-- Emergency Banner -->
-    <div class="mb-8 p-6 rounded-lg bg-red-50 border-l-4 border-red-400">
-      <div class="flex items-start">
-        <div class="flex-shrink-0">
-          <svg class="h-6 w-6 text-red-400 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
-          </svg>
-        </div>
-        <div class="ml-3">
-          <h1 class="text-2xl font-bold text-black !text-black mb-2">Crisis Resources & Professional Help</h1>
-          <p class="text-black !text-black leading-relaxed">
-            <strong>Important:</strong> If you're experiencing thoughts of self-harm, suicide, or are in immediate crisis, please reach out for professional help right away. ProcessIt is a supplemental tool to therapy and cannot provide crisis intervention or emergency mental health services.
-          </p>
-        </div>
-      </div>
+    <div class="mb-12 p-6 rounded-lg" style="background-color: #D4E7F4;">
+      <h1 class="text-2xl font-bold mb-4" style="color: var(--color-text-primary)">crisis resources & professional help</h1>
+      <p class="text-base leading-relaxed" style="color: var(--color-text-secondary)">
+        <strong>important:</strong> if I'm experiencing thoughts of self-harm, suicide, or am in immediate crisis, please reach out for professional help right away. processit is a supplemental tool to therapy and cannot provide crisis intervention or emergency mental health services.
+      </p>
     </div>
 
     <!-- Immediate Crisis Help -->
     <div class="mb-12">
-      <h2 class="text-2xl font-bold mb-6 text-gray-800">🚨 Immediate Crisis Help</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="p-6 rounded-lg bg-blue-50 border border-blue-200">
-          <h3 class="text-xl font-semibold text-blue-800 mb-3">Emergency Services</h3>
-          <p class="text-blue-700 mb-4">If you're in immediate danger or experiencing a life-threatening emergency:</p>
+      <h2 class="text-xl font-semibold mb-6" style="color: var(--color-text-primary)">immediate crisis help</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8 rounded-2xl" style="background-color: var(--color-bg-secondary)">
+          <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary)">emergency services</h3>
+          <p class="text-sm mb-4" style="color: var(--color-text-secondary)">if I'm in immediate danger or experiencing a life-threatening emergency:</p>
           <div class="text-center">
-            <a href="tel:911" class="inline-block bg-primary-light text-white px-4 py-2 rounded-md text-xs font-medium h-8 hover:bg-primary transition">
-              Call 911
+            <a href="tel:911" class="inline-block text-white px-6 py-3 rounded-lg font-medium transition hover:opacity-90" style="background-color: #3a5a8c;">
+              call 911
             </a>
           </div>
         </div>
         
-        <div class="p-6 rounded-lg bg-blue-50 border border-blue-200">
-          <h3 class="text-xl font-semibold text-blue-800 mb-3">Suicide Prevention Lifeline</h3>
-          <p class="text-blue-700 mb-4">24/7 confidential support for anyone in suicidal crisis or emotional distress:</p>
+        <div class="p-8 rounded-2xl" style="background-color: var(--color-bg-secondary)">
+          <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary)">suicide prevention lifeline</h3>
+          <p class="text-sm mb-4" style="color: var(--color-text-secondary)">24/7 confidential support for anyone in suicidal crisis or emotional distress:</p>
           <div class="text-center">
-            <a href="tel:988" class="inline-block bg-primary-light text-white px-4 py-2 rounded-md text-xs font-medium h-8 hover:bg-primary transition">
-              Call 988
+            <a href="tel:988" class="inline-block text-white px-6 py-3 rounded-lg font-medium transition hover:opacity-90" style="background-color: #3a5a8c;">
+              call 988
             </a>
           </div>
         </div>
@@ -50,24 +41,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     <!-- Crisis Text & Chat -->
     <div class="mb-12">
-      <h2 class="text-2xl font-bold mb-6 text-gray-800">💬 Crisis Text & Chat Support</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="p-6 rounded-lg bg-blue-50 border border-blue-200">
-          <h3 class="text-xl font-semibold text-blue-800 mb-3">Crisis Text Line</h3>
-          <p class="text-blue-700 mb-4">Text HOME to 741741 to connect with a crisis counselor:</p>
+      <h2 class="text-xl font-semibold mb-6" style="color: var(--color-text-primary)">crisis text & chat support</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8 rounded-2xl" style="background-color: var(--color-bg-secondary)">
+          <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary)">crisis text line</h3>
+          <p class="text-sm mb-4" style="color: var(--color-text-secondary)">text HOME to 741741 to connect with a crisis counselor:</p>
           <div class="text-center">
-            <a href="sms:741741&body=HOME" class="inline-block bg-primary-light text-white px-4 py-2 rounded-md text-xs font-medium h-8 hover:bg-primary transition">
-              Text HOME to 741741
+            <a href="sms:741741&body=HOME" class="inline-block text-white px-6 py-3 rounded-lg font-medium transition hover:opacity-90" style="background-color: #3a5a8c;">
+              text HOME to 741741
             </a>
           </div>
         </div>
         
-        <div class="p-6 rounded-lg bg-blue-50 border border-blue-200">
-          <h3 class="text-xl font-semibold text-blue-800 mb-3">988 Chat</h3>
-          <p class="text-blue-700 mb-4">Online chat support through the Suicide Prevention Lifeline:</p>
+        <div class="p-8 rounded-2xl" style="background-color: var(--color-bg-secondary)">
+          <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary)">988 chat</h3>
+          <p class="text-sm mb-4" style="color: var(--color-text-secondary)">online chat support through the suicide prevention lifeline:</p>
           <div class="text-center">
-            <a href="https://988lifeline.org/chat/" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary-light text-white px-4 py-2 rounded-md text-xs font-medium h-8 hover:bg-primary transition">
-              Start Chat
+            <a href="https://988lifeline.org/chat/" target="_blank" rel="noopener noreferrer" class="inline-block text-white px-6 py-3 rounded-lg font-medium transition hover:opacity-90" style="background-color: #3a5a8c;">
+              start chat
             </a>
           </div>
         </div>
@@ -76,34 +67,34 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     <!-- Finding Professional Help -->
     <div class="mb-12">
-      <h2 class="text-2xl font-bold mb-6 text-gray-800">👩‍⚕️ Finding Professional Mental Health Care</h2>
-      <div class="space-y-6">
-        <div class="p-6 rounded-lg bg-blue-50 border border-blue-200">
-          <h3 class="text-xl font-semibold text-blue-800 mb-3">Psychology Today Therapist Finder</h3>
-          <p class="text-blue-700 mb-4">Search for licensed therapists, psychiatrists, and treatment centers in your area:</p>
+      <h2 class="text-xl font-semibold mb-6" style="color: var(--color-text-primary)">finding professional mental health care</h2>
+      <div class="space-y-8">
+        <div class="p-8 rounded-2xl" style="background-color: var(--color-bg-secondary)">
+          <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary)">psychology today therapist finder</h3>
+          <p class="text-sm mb-4" style="color: var(--color-text-secondary)">search for licensed therapists, psychiatrists, and treatment centers in my area:</p>
           <div class="text-center">
-            <a href="https://www.psychologytoday.com/us/therapists" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary-light text-white px-4 py-2 rounded-md text-xs font-medium h-8 hover:bg-primary transition">
-              Find a Therapist
+            <a href="https://www.psychologytoday.com/us/therapists" target="_blank" rel="noopener noreferrer" class="inline-block text-white px-6 py-3 rounded-lg font-medium transition hover:opacity-90" style="background-color: #3a5a8c;">
+              find a therapist
             </a>
           </div>
         </div>
         
-        <div class="p-6 rounded-lg bg-blue-50 border border-blue-200">
-          <h3 class="text-xl font-semibold text-blue-800 mb-3">SAMHSA Treatment Locator</h3>
-          <p class="text-blue-700 mb-4">Find treatment facilities and programs for mental health and substance use:</p>
+        <div class="p-8 rounded-2xl" style="background-color: var(--color-bg-secondary)">
+          <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary)">samhsa treatment locator</h3>
+          <p class="text-sm mb-4" style="color: var(--color-text-secondary)">find treatment facilities and programs for mental health and substance use:</p>
           <div class="text-center">
-            <a href="https://findtreatment.samhsa.gov/" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary-light text-white px-4 py-2 rounded-md text-xs font-medium h-8 hover:bg-primary transition">
-              Find Treatment
+            <a href="https://findtreatment.samhsa.gov/" target="_blank" rel="noopener noreferrer" class="inline-block text-white px-6 py-3 rounded-lg font-medium transition hover:opacity-90" style="background-color: #3a5a8c;">
+              find treatment
             </a>
           </div>
         </div>
         
-        <div class="p-6 rounded-lg bg-blue-50 border border-blue-200">
-          <h3 class="text-xl font-semibold text-blue-800 mb-3">Trauma-Informed Therapy Network</h3>
-          <p class="text-blue-700 mb-4">Connect with therapists who specialize in trauma and complex PTSD:</p>
+        <div class="p-8 rounded-2xl" style="background-color: var(--color-bg-secondary)">
+          <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary)">trauma-informed therapy network</h3>
+          <p class="text-sm mb-4" style="color: var(--color-text-secondary)">connect with therapists who specialize in trauma and complex PTSD:</p>
           <div class="text-center">
-            <a href="https://www.istss.org/find-a-therapist" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary-light text-white px-4 py-2 rounded-md text-xs font-medium h-8 hover:bg-primary transition">
-              Find Trauma Specialists
+            <a href="https://www.istss.org/find-a-therapist" target="_blank" rel="noopener noreferrer" class="inline-block text-white px-6 py-3 rounded-lg font-medium transition hover:opacity-90" style="background-color: #3a5a8c;">
+              find trauma specialists
             </a>
           </div>
         </div>
@@ -112,30 +103,30 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     <!-- How Process Complements Professional Care -->
     <div class="mb-12">
-      <h2 class="text-2xl font-bold mb-6 text-gray-800">📚 How Process Complements Professional Care</h2>
-      <div class="p-6 rounded-lg bg-blue-50 border border-blue-200">
-        <h3 class="text-xl font-semibold text-blue-800 mb-3">Supplemental Tool to Therapy, Not Treatment</h3>
-        <p class="text-blue-700 mb-4">
-          ProcessIt is designed as a supplemental tool that works alongside professional mental health care, not as a replacement. Here's how it can support your therapy journey:
+      <h2 class="text-xl font-semibold mb-6" style="color: var(--color-text-primary)">how processit complements professional care</h2>
+      <div class="p-8 rounded-2xl" style="background-color: var(--color-bg-secondary)">
+        <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary)">supplemental tool to therapy, not treatment</h3>
+        <p class="text-sm mb-4" style="color: var(--color-text-secondary)">
+          processit is designed as a supplemental tool that works alongside professional mental health care, not as a replacement. here's how it can support my therapy journey:
         </p>
-        <ul class="list-disc pl-6 text-blue-700 space-y-2">
-          <li><strong>Prepare for therapy sessions:</strong> Use insights from ProcessIt to identify topics to discuss with your therapist</li>
-          <li><strong>Continue support between appointments:</strong> Access supplemental support and tools when you can't access therapy</li>
-          <li><strong>Bridge gaps in care:</strong> Provide supplemental support when professional help isn't immediately available</li>
-          <li><strong>Enhance self-awareness:</strong> Develop insights that can make therapy more effective</li>
+        <ul class="list-disc pl-6 space-y-2 text-sm" style="color: var(--color-text-secondary)">
+          <li><strong>prepare for therapy sessions:</strong> use insights from processit to identify topics to discuss with my therapist</li>
+          <li><strong>continue support between appointments:</strong> access supplemental support and tools when I can't access therapy</li>
+          <li><strong>bridge gaps in care:</strong> provide supplemental support when professional help isn't immediately available</li>
+          <li><strong>enhance self-awareness:</strong> develop insights that can make therapy more effective</li>
         </ul>
       </div>
     </div>
 
     <!-- Return to Learning -->
     <div class="text-center">
-      <div class="p-6 rounded-lg bg-blue-50 border border-blue-200">
-        <h3 class="text-xl font-semibold text-blue-800 mb-3">Ready to Continue Learning?</h3>
-        <p class="text-blue-700 mb-4">
-          Once you're feeling safe and stable, ProcessIt is here to help you continue your healing journey with trauma-informed support.
+      <div class="p-8 rounded-2xl" style="background-color: var(--color-bg-secondary)">
+        <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text-primary)">ready to continue learning?</h3>
+        <p class="text-sm mb-4" style="color: var(--color-text-secondary)">
+          once I'm feeling safe and stable, processit is here to help me continue my healing journey with trauma-informed support.
         </p>
-        <a href="/" class="inline-block bg-primary-light text-white px-4 py-2 rounded-md text-xs font-medium h-8 hover:bg-primary transition">
-          Return to Home
+        <a href="/" class="inline-block text-white px-6 py-3 rounded-lg font-medium transition hover:opacity-90" style="background-color: #3a5a8c;">
+          return to home
         </a>
       </div>
     </div>
