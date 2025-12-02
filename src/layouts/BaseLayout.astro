@@ -16,8 +16,10 @@ import Footer from "../components/global/Footer.astro";
     <Footer/>
     
     <script is:inline>
-      // Capitalize standalone 'I' pronouns after lowercase transform
-      document.addEventListener('DOMContentLoaded', function() {
+      // Capitalize standalone 'I' pronouns and 'AI' after lowercase transform
+      // CSS text-transform applies lowercase, so we need to wrap I and AI in spans
+      // with text-transform: none to prevent CSS from lowercasing them
+      function capitalizePronouns() {
         const textNodes = [];
         const walker = document.createTreeWalker(
           document.body,
@@ -29,7 +31,8 @@ import Footer from "../components/global/Footer.astro";
               if (!parent || parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE' || 
                   parent.tagName === 'CODE' || parent.tagName === 'PRE' ||
                   parent.tagName === 'SVG' || parent.tagName === 'IMG' ||
-                  parent.classList.contains('uppercase')) {
+                  parent.classList.contains('uppercase') ||
+                  parent.classList.contains('no-lowercase')) {
                 return NodeFilter.FILTER_REJECT;
               }
               return NodeFilter.FILTER_ACCEPT;
@@ -46,21 +49,79 @@ import Footer from "../components/global/Footer.astro";
         
         textNodes.forEach(textNode => {
           let text = textNode.textContent;
-          // Capitalize 'AI' first (standalone word, case-insensitive)
-          text = text.replace(/\bai\b/gi, 'AI');
-          // Capitalize standalone 'I' and contractions (I'm, I've, I'll, I'd)
-          // Handle contractions first to avoid double replacement
-          text = text.replace(/\bi'm\b/gi, "I'm");
-          text = text.replace(/\bi've\b/gi, "I've");
-          text = text.replace(/\bi'll\b/gi, "I'll");
-          text = text.replace(/\bi'd\b/gi, "I'd");
-          // Then handle standalone 'I' (must come after contractions)
-          text = text.replace(/\bi\b/g, 'I');
-          if (text !== textNode.textContent) {
-            textNode.textContent = text;
+          const originalText = text;
+          
+          // Check if text contains 'i' or 'ai' that needs capitalization
+          if (!/\b(i|i'm|i've|i'll|i'd|ai)\b/i.test(text)) {
+            return; // Skip if no matches
+          }
+          
+          // Split text and wrap I/AI in spans with no-lowercase class
+          const parts = text.split(/(\bi\b|\bi'm\b|\bi've\b|\bi'll\b|\bi'd\b|\bai\b)/gi);
+          if (parts.length > 1) {
+            const fragment = document.createDocumentFragment();
+            parts.forEach((part, index) => {
+              if (!part) return;
+              const lowerPart = part.toLowerCase();
+              if (lowerPart === 'i' || lowerPart === "i'm" || lowerPart === "i've" || 
+                  lowerPart === "i'll" || lowerPart === "i'd" || lowerPart === 'ai') {
+                const span = document.createElement('span');
+                span.className = 'no-lowercase';
+                span.style.textTransform = 'none';
+                if (lowerPart === 'ai') {
+                  span.textContent = 'AI';
+                } else if (lowerPart === 'i') {
+                  span.textContent = 'I';
+                } else {
+                  span.textContent = lowerPart.charAt(0).toUpperCase() + lowerPart.slice(1);
+                }
+                fragment.appendChild(span);
+              } else {
+                fragment.appendChild(document.createTextNode(part));
+              }
+            });
+            
+            // Replace the text node with the fragment
+            const parent = textNode.parentNode;
+            if (parent) {
+              parent.replaceChild(fragment, textNode);
+            }
           }
         });
+      }
+      
+      // Run when DOM is ready and after a delay
+      function startCapitalization() {
+        capitalizePronouns();
+        // Run again after CSS has applied
+        setTimeout(capitalizePronouns, 100);
+        setTimeout(capitalizePronouns, 500);
+      }
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', startCapitalization);
+      } else {
+        startCapitalization();
+      }
+      
+      // Watch for DOM changes
+      const observer = new MutationObserver(function() {
+        setTimeout(capitalizePronouns, 50);
       });
+      
+      if (document.body) {
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true
+        });
+      } else {
+        document.addEventListener('DOMContentLoaded', function() {
+          observer.observe(document.body, {
+            childList: true,
+            subtree: true
+          });
+        });
+      }
     </script>
   </body>
 </html>

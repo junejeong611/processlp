@@ -70,6 +70,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Exceptions: Don't lowercase these elements */
 .uppercase,
+.no-lowercase,
 code, pre,
 input, textarea, button,
 svg, img {
