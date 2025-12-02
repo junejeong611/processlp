@@ -9,7 +9,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <p><strong>Last updated: July 31, 2025</strong></p>
       
       <h2>Introduction</h2>
-      <p>At Process, your privacy and emotional safety are our highest priorities. This Privacy Policy explains how we collect, use, protect, and handle your personal information when you use our trauma-informed AI emotional support application.</p>
+      <p>At ProcessIt, your privacy and emotional safety are our highest priorities. This Privacy Policy explains how we collect, use, protect, and handle your personal information when you use our trauma-informed recovery resource mobile application (iOS App Store).</p>
       <p><strong>We understand the sensitive nature of trauma and emotional processing. Your trust is sacred to us, and we are committed to transparency about our data practices.</strong></p>
       
       <h2>Information We Collect</h2>
@@ -18,7 +18,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <ul>
         <li><strong>Account Data:</strong> Email address, first name, last name (encrypted in database)</li>
         <li><strong>Authentication:</strong> Password (hashed), multi-factor authentication codes, refresh tokens</li>
-        <li><strong>Subscription Data:</strong> Stripe customer ID, subscription status, payment information</li>
+        <li><strong>Subscription Data:</strong> Apple ID, subscription status, subscription purchase history (managed through Apple In-App Purchase)</li>
       </ul>
       
       <h3>Usage and Conversation Data</h3>
@@ -26,6 +26,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <li><strong>Chat Conversations:</strong> All messages, conversation history, and emotional content (encrypted)</li>
         <li><strong>Usage Analytics:</strong> Session events, user engagement metrics</li>
         <li><strong>Technical Data:</strong> IP addresses, device information, login timestamps, geographic location</li>
+        <li><strong>Healing Tracker Data:</strong> Daily check-in responses, progress tracking, and healing action logs</li>
       </ul>
       
       <h3>What We Do NOT Collect</h3>
@@ -33,14 +34,37 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <li>Explicit age verification data</li>
         <li>Sensitive health diagnoses or medical records</li>
         <li>Third-party tracking beyond essential services</li>
+        <li>Payment card information (all payments processed by Apple)</li>
       </ul>
+      
+      <h2>Mobile App Permissions</h2>
+      
+      <h3>Microphone Access</h3>
+      <p>We request microphone access to enable voice-to-text input for conversations with the AI companion. Voice recordings are processed in real-time and are not permanently stored on our servers. The audio is:</p>
+      <ul>
+        <li>Converted to text using device-based or cloud-based transcription services</li>
+        <li>Processed immediately for AI response generation</li>
+        <li>Not saved as audio files on our servers</li>
+        <li>Only the transcribed text is stored as part of your conversation history</li>
+      </ul>
+      <p>You can disable microphone access at any time through your iOS device settings. The app will continue to function with text-only input.</p>
+      
+      <h3>Push Notifications</h3>
+      <p>We collect device tokens to send optional daily reminder notifications. These notifications:</p>
+      <ul>
+        <li>Remind you to check in with the app for daily healing tracking</li>
+        <li>Are customizable in the app settings (you can set preferred times or disable them entirely)</li>
+        <li>Do not contain sensitive personal information</li>
+        <li>Can be enabled or disabled at any time in the app settings or iOS device settings</li>
+      </ul>
+      <p>Device tokens are shared with Expo (our push notification service provider) solely for the purpose of delivering notifications. You can revoke notification permissions at any time.</p>
       
       <h2>How We Use Your Information</h2>
       
       <h3>Primary Uses</h3>
       <ul>
         <li><strong>Service Provision:</strong> To provide emotional support and trauma-informed emotional processing</li>
-        <li><strong>Account Management:</strong> To create and maintain your account, process payments</li>
+        <li><strong>Account Management:</strong> To create and maintain your account. Payments are processed by Apple through In-App Purchase—we do not directly process payments.</li>
         <li><strong>AI Processing:</strong> To enable Claude AI to provide personalized emotional support</li>
         <li><strong>Communication:</strong> To send important notifications and support emails</li>
       </ul>
@@ -56,18 +80,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       
       <h3>Essential Services</h3>
       <ul>
-        <li><strong>Stripe:</strong> Payment processing and subscription management</li>
-        <li><strong>Mailjet:</strong> Email delivery for notifications and support</li>
-        <li><strong>Claude AI (Anthropic):</strong> AI processing for emotional support conversations</li>
-        <li><strong>AWS:</strong> Backend infrastructure and data storage (US East 1 region)</li>
-        <li><strong>MongoDB:</strong> Database storage</li>
-        <li><strong>ElevenLabs:</strong> Voice synthesis (if voice features are enabled)</li>
+        <li><strong>Apple In-App Purchase:</strong> All payments are processed by Apple through their In-App Purchase system. We do not directly handle your payment information. Your subscription is managed through your Apple ID.</li>
+        <li><strong>RevenueCat:</strong> We use RevenueCat to manage your subscription and communicate with Apple's In-App Purchase system. RevenueCat processes your Apple ID and subscription status to manage subscription renewals and cancellations.</li>
+        <li><strong>Expo:</strong> We use Expo services for push notification delivery. Expo processes device tokens to send notifications to your device. Expo does not have access to your conversation content or personal messages.</li>
+        <li><strong>Claude AI (Anthropic):</strong> AI processing for emotional support conversations. Chat messages are sent to Claude AI for real-time processing to generate trauma-informed responses.</li>
+        <li><strong>AWS:</strong> Backend infrastructure and data storage (US East 1 region). All user data, conversations, and account information are stored securely on AWS infrastructure.</li>
+        <li><strong>ElevenLabs:</strong> Voice synthesis (if voice features are enabled). Used for converting text responses to speech when voice output is requested.</li>
       </ul>
       
       <h3>Data Sharing with Third Parties</h3>
       <p>We only share your data with third parties in these specific circumstances:</p>
       <ul>
-        <li><strong>Service Providers:</strong> To process payments, send emails, and provide AI services</li>
+        <li><strong>Service Providers:</strong> To manage subscriptions (RevenueCat), send push notifications (Expo), and provide AI services (Claude AI)</li>
+        <li><strong>Payment Processing:</strong> Apple processes all payments directly. We do not receive or store your payment card information.</li>
         <li><strong>Legal Requirements:</strong> When required by law or to protect our rights</li>
         <li><strong>Emergency Situations:</strong> In crisis situations where professional help is needed</li>
       </ul>
@@ -84,10 +109,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       
       <h3>Storage Location</h3>
       <ul>
-        <li><strong>Primary Storage:</strong> AWS US East 1 region (United States)</li>
+        <li><strong>Cloud Storage:</strong> AWS US East 1 region (United States) - All conversations, account data, and healing tracker information are stored securely in the cloud</li>
+        <li><strong>Local Device Storage:</strong> The mobile app stores certain data locally on your device (healing tracker data, notification preferences, cached conversations) to allow the app to work offline. This local data syncs with our cloud servers when you're authenticated and online.</li>
         <li><strong>Database:</strong> MongoDB hosted on AWS infrastructure</li>
         <li><strong>Backup:</strong> AWS infrastructure with standard redundancy</li>
       </ul>
+      <p><strong>Offline Functionality:</strong> The app can function offline for viewing cached conversations and accessing previously downloaded content. When you reconnect to the internet, your local data automatically syncs with our cloud servers to ensure your data is up-to-date across all devices.</p>
       
       <h3>Security Measures</h3>
       <ul>
@@ -227,7 +254,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <div class="ml-3">
             <h3 class="text-lg font-semibold text-black">Important Disclaimer</h3>
             <p class="text-black mt-2">
-              <strong>IMPORTANT:</strong> Process is not a substitute for professional mental health care. If you are experiencing a mental health crisis, please contact emergency services or a mental health professional immediately.
+              <strong>IMPORTANT:</strong> ProcessIt is not a substitute for professional mental health care. If you are experiencing a mental health crisis, please contact emergency services or a mental health professional immediately.
             </p>
           </div>
         </div>

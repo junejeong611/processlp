@@ -6,17 +6,17 @@
   --font-sans: "Inter", sans-serif;
   --font-display: "InterVariable", sans-serif;
   --color-black: #121212;
-  /* Primary Colors */
+  /* Primary Colors - Mobile App Palette */
   --color-primary: #3a5a8c;
-  --color-primary-light: #7bb6fa;
-  --color-primary-dark: #5a8fd6;
+  --color-primary-light: #5a7fb0;
+  --color-primary-dark: #2a4a6c;
   /* Secondary */
-  --color-secondary: #8b5cf6;
+  --color-secondary: #3a5a8c;
   /* Accent */
-  --color-accent: #7bb6fa;
-  --color-accent-light: #ffab91;
-  /* Backgrounds */
-  --color-bg-primary: #f8fafc;
+  --color-accent: #3a5a8c;
+  --color-accent-light: #5a7fb0;
+  /* Backgrounds - Mobile App Palette */
+  --color-bg-primary: #D4E7F4;
   --color-bg-secondary: #f1f5f9;
   --color-bg-tertiary: #e2e8f0;
   --color-white: #ffffff;
@@ -56,6 +56,26 @@ mark, .highlight {
 body, header, main {
   margin: 0;
   padding: 0;
+}
+
+/* Lowercase all text by default */
+body {
+  text-transform: lowercase;
+}
+
+/* Exceptions: Don't lowercase these elements */
+h1, h2, h3, h4, h5, h6,
+.capitalize,
+.uppercase,
+code, pre,
+input, textarea, button,
+[class*="font-"] {
+  text-transform: none;
+}
+
+/* Capitalize first letter of sentences and standalone 'I' */
+.capitalize-i::first-letter {
+  text-transform: capitalize;
 }
 
 @media (min-width: 1024px) {

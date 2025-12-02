@@ -14,5 +14,49 @@ import Footer from "../components/global/Footer.astro";
     <Navigation/>
     <main class="grow"><slot /></main>
     <Footer/>
+    
+    <script is:inline>
+      // Capitalize standalone 'I' pronouns after lowercase transform
+      document.addEventListener('DOMContentLoaded', function() {
+        const textNodes = [];
+        const walker = document.createTreeWalker(
+          document.body,
+          NodeFilter.SHOW_TEXT,
+          {
+            acceptNode: function(node) {
+              // Skip script, style, and other non-text elements
+              const parent = node.parentElement;
+              if (!parent || parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE' || 
+                  parent.tagName === 'CODE' || parent.tagName === 'PRE' ||
+                  parent.classList.contains('uppercase') || parent.classList.contains('capitalize')) {
+                return NodeFilter.FILTER_REJECT;
+              }
+              return NodeFilter.FILTER_ACCEPT;
+            }
+          }
+        );
+        
+        let node;
+        while (node = walker.nextNode()) {
+          if (node.textContent.trim()) {
+            textNodes.push(node);
+          }
+        }
+        
+        textNodes.forEach(textNode => {
+          let text = textNode.textContent;
+          // Capitalize standalone 'I' and contractions (I'm, I've, I'll, I'd, I'm)
+          text = text.replace(/\bi\b/g, 'I');
+          text = text.replace(/\bi'm\b/gi, "I'm");
+          text = text.replace(/\bi've\b/gi, "I've");
+          text = text.replace(/\bi'll\b/gi, "I'll");
+          text = text.replace(/\bi'd\b/gi, "I'd");
+          text = text.replace(/\bi'm\b/gi, "I'm");
+          if (text !== textNode.textContent) {
+            textNode.textContent = text;
+          }
+        });
+      });
+    </script>
   </body>
 </html>

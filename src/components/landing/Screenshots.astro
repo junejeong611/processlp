@@ -1,0 +1,133 @@
+---
+// Screenshots configuration
+// For paired screenshots that combine into one phone image, use the 'paired' property
+// Paired screenshots will be displayed side-by-side with no gap
+const screenshots = [
+  {
+    image: "/screenshots/screenshot-1-tagline.png",
+    caption: "Process triggers with compassionate AI support",
+    alt: "ProcessIt tagline and value proposition",
+    paired: false
+  },
+  {
+    image: "/screenshots/screenshot-2-chat.png",
+    caption: "Real-time emotional processing",
+    alt: "Trauma-informed chat interface",
+    paired: false
+  },
+  {
+    image: "/screenshots/screenshot-3-understanding.png",
+    caption: "Gain understanding and insight to heal",
+    alt: "Understanding and healing insights",
+    paired: false
+  },
+  {
+    image: "/screenshots/screenshot-4-daily-checkin.png",
+    caption: "Track daily healing actions",
+    alt: "Daily healing tracker check-in",
+    paired: false
+  },
+  {
+    image: "/screenshots/screenshot-5-regulation.png",
+    caption: "Calm your nervous system in 60 seconds",
+    alt: "Nervous system regulation exercise",
+    paired: false
+  },
+  {
+    image: "/screenshots/screenshot-6-insights.png",
+    caption: "Discover patterns in your healing journey",
+    alt: "AI-generated pattern recognition and insights",
+    paired: false
+  }
+];
+
+// Group screenshots into pairs if needed
+// If you have paired screenshots, update the structure like this example:
+// const pairedScreenshots = [
+//   { left: screenshots[0], right: screenshots[1] }, // These two combine into one phone
+//   screenshots[2], // Single screenshot
+//   { left: screenshots[3], right: screenshots[4] }, // These two combine
+//   screenshots[5] // Single screenshot
+// ];
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+    <div class="text-center mb-12">
+      <p class="text-sm leading-normal font-bold uppercase mb-2" style="color: #3a5a8c;">
+        See ProcessIt in Action
+      </p>
+      <h2
+        class="text-xl leading-tight tracking-tight sm:text-2xl md:text-3xl capitalize lg:text-4xl mt-4 font-semibold" style="color: var(--color-text-primary)">
+        Experience ProcessIt
+      </h2>
+      <p class="mt-4 text-lg max-w-2xl mx-auto" style="color: var(--color-text-secondary)">
+        See how ProcessIt helps you process triggers, track healing, and regulate your nervous system—all in one mobile app.
+      </p>
+    </div>
+
+    <!-- Screenshot Grid -->
+    <div class="space-y-8">
+      {screenshots.map((screenshot, index) => {
+        // Check if this screenshot is part of a pair (next one exists and both are marked as paired)
+        const isPaired = screenshot.paired && screenshots[index + 1]?.paired;
+        const isSecondOfPair = index > 0 && screenshots[index - 1]?.paired;
+        
+        // Skip rendering if this is the second of a pair (it will be rendered with the first)
+        if (isSecondOfPair) return null;
+        
+        // If this is a paired screenshot, render both side-by-side
+        if (isPaired) {
+          const nextScreenshot = screenshots[index + 1];
+          return (
+            <div class="group">
+              <div class="flex gap-0 items-center justify-center max-w-2xl mx-auto">
+                <div class="flex-1">
+                  <div class="relative overflow-hidden rounded-l-2xl bg-gray-100 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+                    <img
+                      src={screenshot.image}
+                      alt={screenshot.alt}
+                      class="w-full h-auto object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+                <div class="flex-1">
+                  <div class="relative overflow-hidden rounded-r-2xl bg-gray-100 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+                    <img
+                      src={nextScreenshot.image}
+                      alt={nextScreenshot.alt}
+                      class="w-full h-auto object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+              <p class="mt-3 text-sm text-center font-medium" style="color: var(--color-text-secondary)">
+                {screenshot.caption}
+              </p>
+            </div>
+          );
+        }
+        
+        // Single screenshot
+        return (
+          <div class="group cursor-pointer max-w-md mx-auto">
+            <div class="relative overflow-hidden rounded-2xl bg-gray-100 shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+              <img
+                src={screenshot.image}
+                alt={screenshot.alt}
+                class="w-full h-auto object-contain"
+                loading="lazy"
+              />
+            </div>
+            <p class="mt-3 text-sm text-center font-medium" style="color: var(--color-text-secondary)">
+              {screenshot.caption}
+            </p>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
+

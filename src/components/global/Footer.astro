@@ -4,10 +4,11 @@ const policyLinks = [
   { name: "Privacy Policy", href: "/privacy" },
   { name: "AI Policy", href: "/ai-policy" },
   { name: "Crisis Resources", href: "/crisis-resources" },
+  { name: "Support", href: "/support" },
 ];
 ---
 
-<footer class="bg-gradient-to-br from-blue-50 via-white to-blue-100 border-base-200">
+<footer class="bg-gradient-to-br from-blue-50 via-white to-blue-100 border-base-200" style="background: linear-gradient(to bottom right, #D4E7F4, white, #D4E7F4);">
   <div class="px-6 md:px-12 lg:px-24 py-12 max-w-7xl mx-auto">
     
     <!-- Main Content -->
@@ -17,56 +18,68 @@ const policyLinks = [
       <div>
         <a href="/" class="inline-flex items-center gap-3">
           <img width="40" src="/logo.svg" alt="Process logo" />
-          <span class="text-lg font-semibold text-black">Process</span>
+          <span class="text-lg font-semibold text-black">ProcessIt</span>
         </a>
-        <p class="mt-4 text-sm text-text-muted">
-          Trauma-informed educational tools for complex trauma survivors. 
-          Learn to understand emotional patterns with guided educational support.
+        <p class="mt-4 text-sm" style="color: var(--color-text-secondary)">
+          Trauma recovery resource and support tool. Mobile app with 24/7 compassionate support, healing tracking, and nervous system regulation tools.
         </p>
+        <div class="mt-4">
+          <p class="text-xs mb-2" style="color: var(--color-text-secondary)">
+            Mobile App Only • iOS App Store
+          </p>
+          <a href="#" class="inline-block">
+            <img 
+              src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1276560000" 
+              alt="Download on the App Store" 
+              class="h-10 w-auto"
+            />
+          </a>
+        </div>
       </div>
 
-      <!-- Newsletter Section -->
+      <!-- Contact & Support Section -->
       <div>
         <h3 class="text-lg font-semibold text-black mb-2">
-          Stay Updated
+          Get Support
         </h3>
-        <p class="text-sm text-text-muted mb-4">
-          Get updates on new features and trauma-informed educational resources.
+        <p class="text-sm mb-4" style="color: var(--color-text-secondary)">
+          Questions, feedback, or need help? We're here for you.
         </p>
-        <form id="footer-subscribe-form" class="flex flex-col sm:flex-row items-center gap-3">
-          <input
-            type="email"
-            id="footer-subscribe-email"
-            placeholder="Your email address"
-            class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
-            required
-          />
-          <button
-            type="submit"
-            id="footer-subscribe-submit"
-            class="px-6 py-2 w-full sm:w-auto rounded-md bg-primary-light text-white hover:bg-primary transition">
-            Subscribe
-          </button>
-        </form>
-        <div id="footer-subscribe-message" class="mt-2 text-sm"></div>
+        <div class="space-y-2">
+          <a 
+            href="mailto:team@processit.app" 
+            class="block text-sm hover:opacity-80 transition"
+            style="color: #3a5a8c;"
+          >
+            team@processit.app
+          </a>
+          <a 
+            href="/support" 
+            class="inline-block text-sm font-medium hover:opacity-80 transition mt-2"
+            style="color: #3a5a8c;"
+          >
+            Visit Support Page →
+          </a>
+        </div>
       </div>
     </div>
 
     <!-- Policy Links -->
-    <div class="py-6 border-t border-base-200">
+    <div class="py-6 border-t" style="border-color: var(--color-bg-tertiary)">
       <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
         
         <!-- Copyright -->
-        <p class="text-xs text-text-muted">
-          &copy; {new Date().getFullYear()} Process. Providing trauma-informed educational tools for trauma survivors.
+        <p class="text-xs" style="color: var(--color-text-muted)">
+          &copy; {new Date().getFullYear()} ProcessIt. Trauma recovery resource and support tool.
         </p>
         
         <!-- Policy Links -->
-        <div class="flex gap-6 text-xs">
+        <div class="flex flex-wrap gap-6 text-xs justify-center">
           {policyLinks.map(({ name, href }) => (
             <a
               href={href}
-              class="text-text-muted hover:text-primary transition">
+              class="hover:opacity-80 transition"
+              style="color: var(--color-text-secondary);">
               {name}
             </a>
           ))}
@@ -76,30 +89,3 @@ const policyLinks = [
 
   </div>
 </footer>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('footer-subscribe-form');
-  const emailInput = document.getElementById('footer-subscribe-email');
-  const submitBtn = document.getElementById('footer-subscribe-submit');
-  const messageDiv = document.getElementById('footer-subscribe-message');
-
-  if (form) {
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
-      messageDiv.textContent = '';
-      submitBtn.disabled = true;
-      try {
-        // Newsletter subscription disabled - redirecting to sign up
-        messageDiv.textContent = 'Newsletter signup is currently disabled. Please sign up at https://app.processit.app/register to stay updated.';
-        messageDiv.className = 'mt-2 text-sm text-blue-600';
-      } catch (err) {
-        messageDiv.textContent = 'Network error. Please check your connection and try again.';
-        messageDiv.className = 'mt-2 text-sm text-red-600';
-      } finally {
-        submitBtn.disabled = false;
-      }
-    });
-  }
-});
-</script>

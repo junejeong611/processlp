@@ -1,7 +1,41 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Signup from "../components/Forms/Signup.astro";
 ---
+
 <BaseLayout>
-  <Signup />
+  <section class="mx-auto w-full max-w-2xl px-8 md:px-12 lg:px-24 py-16">
+    <div class="text-center">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--color-text-primary)">
+        Get Started with ProcessIt
+      </h1>
+      <p class="text-lg mb-8" style="color: var(--color-text-secondary)">
+        ProcessIt is a mobile app available on iOS. To create your account, please download the app from the App Store.
+      </p>
+      
+      <div class="mb-8">
+        <a href="#" class="inline-block">
+          <img 
+            src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1276560000" 
+            alt="Download on the App Store" 
+            class="h-14 w-auto mx-auto"
+          />
+        </a>
+      </div>
+      
+      <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-lg text-left max-w-md mx-auto">
+        <p class="text-sm mb-4" style="color: var(--color-text-primary)">
+          <strong>Start Your Free Trial:</strong> Once you download the app, you can create your account and start your 7-day free trial with full access to all features.
+        </p>
+        <p class="text-sm" style="color: var(--color-text-secondary)">
+          After your trial, subscriptions are $11.99/month. Cancel anytime.
+        </p>
+      </div>
+      
+      <div class="mt-8">
+        <a href="/" class="text-sm underline" style="color: #3a5a8c;">
+          ← Back to Home
+        </a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
