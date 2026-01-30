@@ -1,0 +1,74 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <Fragment slot="head">
+    <meta name="apple-itunes-app" content="app-id=6755343766" />
+  </Fragment>
+
+  <section class="mx-auto w-full max-w-4xl px-4 py-12">
+    <div class="prose prose-base text-center">
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">download <span class="no-lowercase">ProcessIt</span></h1>
+      <p class="text-lg text-gray-text mb-8 max-w-xl mx-auto" style="color: var(--color-text-secondary)">
+        <span class="no-lowercase">ProcessIt</span> helps CPTSD survivors in therapy process flashbacks and regulate between sessions. download on the app store to get started.
+      </p>
+
+      <div class="flex flex-col items-center gap-6">
+        <a
+          href="https://apps.apple.com/us/app/processit/id6755343766"
+          class="inline-block focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg transition opacity-100 hover:opacity-90"
+          target="_blank"
+          rel="noopener noreferrer"
+          id="app-store-link"
+        >
+          <img
+            src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1276560000"
+            alt="Download on the App Store"
+            class="h-16 sm:h-20 w-auto min-h-[56px]"
+          />
+        </a>
+
+        <p id="redirect-message" class="text-sm text-gray-text opacity-0 transition-opacity duration-200" style="color: var(--color-text-muted)">
+          redirecting...
+        </p>
+
+        <p class="text-sm mt-4" style="color: var(--color-text-muted)">
+          tiktok users: if not redirected automatically, tap the button above
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script define:vars={{ appStoreUrl: "https://apps.apple.com/us/app/processit/id6755343766" }}>
+    (function () {
+      const link = document.getElementById("app-store-link");
+      const message = document.getElementById("redirect-message");
+      if (!link || !message) return;
+
+      // Show "Redirecting..." shortly before redirect
+      const showMessageAt = 1500;
+      const redirectAt = 2000;
+
+      const showMessage = () => {
+        message.classList.remove("opacity-0");
+        message.classList.add("opacity-100");
+      };
+
+      const redirect = () => {
+        window.location.href = appStoreUrl;
+      };
+
+      const t1 = setTimeout(showMessage, showMessageAt);
+      const t2 = setTimeout(redirect, redirectAt);
+
+      // Clear timeouts if user navigates away (e.g. clicked the button)
+      const clear = () => {
+        clearTimeout(t1);
+        clearTimeout(t2);
+      };
+      link.addEventListener("click", clear);
+      window.addEventListener("beforeunload", clear);
+    })();
+  </script>
+</BaseLayout>
